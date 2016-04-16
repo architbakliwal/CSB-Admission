@@ -1,0 +1,123 @@
+body > .container.main {
+	padding-top: 100px;
+	width: 100%;
+}
+
+a:focus {
+	outline: none;
+}
+
+textarea#redactorArea {
+	width: 100%;
+	font-size: 16px;
+}
+
+table#revisionTable {
+}
+
+table#revisionTable td > div.revisionValue {
+	height: 18px;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+table#revisionTable td .popover-content {
+	padding-bottom: 15px;
+}
+
+#revisionTable_wrapper #revisionTable_filter {
+	display: none;
+}
+
+.tab-pane > .cellnotes .note p.details {
+	font-size: 11px;
+}
+
+.tab-pane > .cellnotes .note p.details a, .tab-pane > .cellnotes .note p.noteUpdate button {
+	margin: 0px;
+}
+
+.tab-pane > .cellnotes .note p.noteUpdate {
+	display: none;
+	margin-top: 10px;
+}
+
+.margin-top-10 {
+	margin-top: 10px;
+}
+
+.margin-bottom-20 {
+	margin-bottom: 20px;
+}
+
+
+/* bottomTabs */
+
+.bottomTabs {
+	width: 100%;
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	z-index: 100;
+	height: 35px;
+	background: #fff;
+	background: rgba(255,255,255,0.6);
+	padding-top: 3px;
+}
+
+.bottomTabs ul {
+	list-style: none;
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px 0px 0px 10px;
+}
+
+.bottomTabs ul li {
+	float: left;
+}
+
+.bottomTabs ul li:first-child {
+	padding: 0px 10px;
+	font-size: 14px;
+	line-height: 35px;
+}
+
+.bottomTabs ul a {
+	display: block;
+	float: left;
+	background: #BDC3C7;
+	height: 32px;
+	font-size: 15px;
+	padding: 10px 15px;
+	color: #fff;
+	line-height: 1em;
+	-webkit-border-top-left-radius: 6px;
+	-webkit-border-top-right-radius: 6px;
+	-moz-border-radius-topleft: 6px;
+	-moz-border-radius-topright: 6px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	margin-right: 2px;
+}
+
+.bottomTabs ul li.active a {
+	background: #3498DB;
+	height: 40px;
+	position: relative;
+	top: -4px;
+}
+
+.bottomTabs ul a:hover {
+	background: #3498DB;
+}
+
+/* /bottomTabs */
+
+
+/* js templates */
+
+.templ {
+	display: none;
+}
+
+/* /js templates */

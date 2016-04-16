@@ -1,0 +1,79 @@
+	::-webkit-input-placeholder {
+	    color: #000000;
+	    opacity: 1;
+	}
+	
+	:-moz-placeholder {
+	    /* Firefox 18- */
+	    color: #000000;
+	    opacity: 1;
+	}
+	
+	::-moz-placeholder {
+	    /* Firefox 19+ */
+	    color: #000000;
+	    opacity: 1;
+	}
+	
+	:-ms-input-placeholder {
+	    color: #000000;
+	    opacity: 1;
+	}
+	
+	.form .inner_header {
+	    padding: 20px 0;
+	}
+	
+	.form .inner_section {
+	    padding: 0;
+	    margin: 0;
+	    border: none;
+	}
+	
+	.irequire:before {
+	    content: '* ';
+	    color: red;
+	    position: absolute;
+	    top: 10px;
+	    left: -10px;
+	}
+	
+	.hiddencontainer {
+	    visibility: hidden;
+	}
+	
+	table.testscoretable {
+	    border-collapse: collapse;
+	    width: 100%;
+	    font-size: 14px;
+	}
+	
+	table.testscoretable th {
+	    color: #ffffff;
+	    background-color: #BDC3C7;
+	    border: 1px solid #BDC3C7;
+	    padding: 10px;
+	    font-size: 16px;
+	    vertical-align: top;
+	    text-align: center;
+	}
+	
+	table.testscoretable td {
+	    border: 1px solid #d4d4d4;
+	    padding: 5px;
+	    padding-top: 7px;
+	    padding-bottom: 7px;
+	    vertical-align: top;
+	}
+	
+	.error {
+	    border: 1px solid #FF0000 !important;
+	}
+	
+	#section_payment ul {
+	    margin: 10px;
+	}
+	
+	#section_payment ul li {
+	    margin: 10px;
+	}

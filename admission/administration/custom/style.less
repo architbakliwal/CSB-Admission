@@ -1,0 +1,425 @@
+@import "../less/flat-ui";
+
+body {
+	background: #fff;
+}
+
+
+.navbar .navbar-brand {
+	padding: 10px 20px;
+}
+
+.navbar-embossed.navbar-fixed-top > .navbar-collapse {
+	border-radius: 0px;
+}
+
+body > .container.main {
+	padding-top: 90px;
+	width: 100%;
+}
+
+a:focus {
+	outline: none;
+}
+
+textarea#redactorArea {
+	width: 100%;
+	font-size: 16px;
+}
+
+table#revisionTable td > div.revisionValue {
+	height: 18px;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+table#revisionTable td .popover-content {
+	padding-bottom: 15px;
+}
+
+#revisionTable_wrapper #revisionTable_filter {
+	display: none;
+}
+
+.tab-pane .noteUpdate {
+	display: none;
+}
+
+.note .details {
+
+	font-size: 11px;
+	
+	button {
+		margin: 0px;
+	}
+	
+}
+
+.tab-pane .note .noteUpdate {
+
+	display: none;
+	margin-top: 10px;
+	
+	button {
+		margin: 0px;
+	}
+	
+}
+
+.tab-pane .note .noteUpdate {
+
+	display: none;
+	margin-top: 10px;
+	
+	button {
+		margin: 0px;
+	}
+	
+}
+
+
+.margin-top-10 {
+	margin-top: 10px;
+}
+
+.margin-top-20 {
+	margin-top: 20px;
+}
+
+.margin-bottom-15 {
+	margin-bottom: 15px;
+}
+
+.margin-bottom-20 {
+	margin-bottom: 20px;
+}
+
+.margin-bottom-0 {
+	margin-bottom: 0px;
+}
+
+.select-margin-bottom-0 div.select, .select-margin-bottom-0 {
+	margin-bottom: 0px !important;
+}
+
+.tab-content {
+	background: #fff;
+}
+
+.popover .popover-content {
+	min-width: 250px;
+}
+
+span.red {
+	color: red;
+}
+
+.panel-title a > span {
+	font-weight: normal;
+}
+
+.panel-body > .form-group {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.addColumnLink {
+	display: block;
+	font-size: 15px;
+	margin-top: 15px;
+}
+
+.form-group.has-error .select .btn {
+	border: 2px solid #E74C3C;
+	box-shadow: none !important;
+	color: #E74C3C !important;
+	padding: 8px 13px;
+}
+
+.navbar #DBsearch {
+	padding-right: 0px;
+}
+
+#recordDetails .panel {
+	overflow: visible;
+}
+
+#cellRevisionTable {
+	max-height: 300px;
+	overflow-y: scroll;
+}
+
+#recordRevisions {
+	max-height: 300px;
+	overflow: scroll;
+}
+
+.panel-body > .fieldValue {
+	font-size: 14px;
+}
+
+#zeTable {
+	overflow: hidden;
+}
+
+// Hovered table
+.table-hover {
+  > tbody {
+    > tr:hover {
+	    > td,
+	    > th {
+		    background-color: @table-bg-highlight;
+		    border-color: @table-bg-highlight !important;
+	    }
+    }
+  }
+}
+
+.tableCrud {
+	float: right;
+	font-size: 14px;
+}
+
+.tableCrud [class*="fui-"] {
+	font-size: 14px;
+}
+
+.tableCrud a.crudEdit {
+	color: @turquoise;
+}
+
+.tableCrud a.crudDel {
+	color: @alizarin;
+}
+
+#fieldModal .redactor_box, #editColumnModal .redactor_box {
+	margin-bottom: 15px;
+}
+
+#recordRevisions .panel-title > a {
+	display: block;
+}
+
+#recordRevisions .panel-title > a > span:last-child {
+	font-weight: normal;
+}
+
+table.recordRevisionTable td > div {
+	max-height: 70px;
+	overflow: hidden;
+}
+
+#columnAccordion .panel, .columnRestrictions .panel {
+	overflow: visible;
+}
+
+#columnAccordion label.checkbox, .no-top-padding {
+	padding-top: 0px !important;
+}
+
+/* bottomTabs */
+
+.bottomTabs {
+
+	width: 100%;
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	z-index: 100;
+	height: auto;
+	background: #fff;
+	background: rgba(255,255,255,0.6);
+	padding-top: 3px;
+	
+	ul {
+		list-style: none;
+		list-style-type: none;
+		padding: 0px;
+		margin: 0px 0px 0px 10px;
+		
+		li {
+			float: left;
+			height: 32px;
+		}
+		li:first-child {
+			padding: 0px 10px;
+			font-size: 14px;
+			line-height: 35px;
+		}
+		a {
+			display: block;
+			float: left;
+			background: #BDC3C7;
+			height: 32px;
+			font-size: 15px;
+			padding: 10px 15px;
+			color: #fff;
+			line-height: 1em;
+			-webkit-border-top-left-radius: 6px;
+			-webkit-border-top-right-radius: 6px;
+			-moz-border-radius-topleft: 6px;
+			-moz-border-radius-topright: 6px;
+			border-top-left-radius: 6px;
+			border-top-right-radius: 6px;
+			margin-right: 2px;
+		}
+		a.addTable {
+			background: #3498DB;
+		}
+		li.active a {
+			background: #1ABC9C;
+			height: 36px;
+			position: relative;
+			top: -4px;
+		}
+		a:hover {
+			background: #3498DB;
+		}
+		a.addTable:hover {
+			background: @turquoise;
+		}
+	}
+	
+}
+
+.nav-tabs > li > a > span {
+	color: #1ABC9C;
+}
+
+.nav-tabs > li > a > span.label {
+	color: #fff;
+}
+
+/*
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+	color: #34495E;
+}*/
+
+/* /bottomTabs */
+
+
+/* js templates */
+
+.templ {
+	display: none;
+}
+
+/* /js templates */
+
+/* advancedSearchForm */
+
+.advancedSearchForm_wrapper {
+	padding-top: 20px;
+}
+
+#advancedSearchForm_wrapper {
+	display: none;
+}
+
+form#advancedSearchForm {
+	border: 2px solid #BDC3C7;
+	border-radius: 6px;
+	padding: 25px;
+	padding-top: 15px;
+	padding-bottom: 5px;
+}
+
+form#advancedSearchForm > div:first-child {
+	margin-bottom: 10px;
+}
+
+form#advancedSearchForm > div h5 {
+	font-size: 18px;
+	margin: 0px;
+	line-height: 31px;
+}
+
+form#advancedSearchForm .panel {
+	overflow: visible;
+}
+
+form#advancedSearchForm .panel-body {
+	padding-top: 25px;
+	padding-bottom: 20px;
+}
+
+button#toggleAdvancedSearch:hover {
+	border-bottom-right-radius: 6px !important;
+	border-top-right-radius: 6px !important;
+}
+
+.filterBar .input-group-btn .btn-default {
+	background-color: #3498DB;
+	border-color: #3498DB;
+	color: #FFFFFF;
+}
+
+/* end advancedSearchForm */
+
+
+/* menu bar */
+
+.navbar-default {
+	background: #1ABC9C;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+	color: #34495E;
+}
+
+.navbar-default .navbar-nav > .active > a {
+	background: #fff;
+	color: #34495E;
+}
+
+.navbar-default .navbar-nav > .active > a:hover {
+	background: #fff;
+	color: #34495E;
+}
+
+.navbar-default .navbar-nav > .active > a:focus {
+	background: #fff;
+	color: #34495E;
+}
+
+.navbar-default .navbar-nav > .active > a .caret, .navbar-default .navbar-nav > .active.dropdown > a .caret {
+	border-bottom-color: #34495E;
+	border-top-color: #34495E;
+}
+
+.navbar-default .navbar-nav > .dropdown > a .caret {
+	border-bottom-color: #fff;
+	border-top-color: #fff;
+}
+
+.navbar-default .navbar-nav > .dropdown > a:hover .caret {
+	border-bottom-color: #34495E;
+	border-top-color: #34495E;
+}
+
+.navbar-default .navbar-nav > .open > a {
+	color: #fff;
+}
+
+.navbar-default .navbar-nav > .active.dropdown.open > a {
+	color: #34495E;
+}
+
+.navbar-default .navbar-nav > .active.dropdown.open > a .caret {
+	border-bottom-color: #34495E !important;
+	border-top-color: #34495E !important;
+}
+
+.navbar-default .navbar-nav > .open > a:hover {
+	color: #fff;
+}
+
+.navbar-default .navbar-nav > .open > a:focus {
+	color: #fff;
+}
+
+/* end menu bar */

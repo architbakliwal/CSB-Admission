@@ -1,0 +1,107 @@
+/*	--------------------------------------------------
+	:: Note: Design for a width of 768px
+	-------------------------------------------------- */
+
+    @media only screen and (min-width: 768px) and (max-width: 959px) {
+        
+		.container{ width:768px; }  
+		
+	}
+
+/*	--------------------------------------------------
+	:: Note: Design for a width of 480px
+	-------------------------------------------------- */
+
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+        
+		.container { width:100%; }
+		.small-wrapper { width:100%; }
+		.grid-container .column-one,
+		.grid-container .column-two,
+		.grid-container .column-three,
+		.grid-container .column-four,
+		.grid-container .column-five,
+		.grid-container .column-six,
+		.grid-container .column-seven,
+		.grid-container .column-eight,
+		.grid-container .column-nine,
+		.grid-container .column-ten,
+		.grid-container .column-eleven,
+		.grid-container .column-twelve { width:98%; }
+		
+		.form .header { 
+		    text-align:center; 
+		}
+		
+		.form .header h4 { 
+		    line-height:22px; 
+		}
+		
+		.form .header a { 
+		    float:none;
+		}
+		
+		#pricing-table-1,
+		#pricing-table-2{
+			margin:0 0 20px 0;
+		}
+		
+		.ui-datepicker { 
+			width:363px;
+		}
+		
+		.ui-datepicker .ui-datepicker-calendar a,
+		.ui-datepicker .ui-datepicker-calendar span {
+			width:43px;
+		}
+
+    }
+
+/*	--------------------------------------------------
+	:: Note: Design for a width of 320px
+	-------------------------------------------------- */
+
+    @media only screen and (max-width: 479px) {
+        
+		.container { width:100%; }
+		.small-wrapper { width:100%; }
+		.grid-container .column-one,
+		.grid-container .column-two,
+		.grid-container .column-three,
+		.grid-container .column-four,
+		.grid-container .column-five,
+		.grid-container .column-six,
+		.grid-container .column-seven,
+		.grid-container .column-eight,
+		.grid-container .column-nine,
+		.grid-container .column-ten,
+		.grid-container .column-eleven,
+		.grid-container .column-twelve { width:98%; }
+		
+		.form .header { 
+		    text-align:center; 
+		}
+		
+		.form .header h4 { 
+		    line-height:22px; 
+		}
+		
+		.form .header a { 
+		    float:none;
+		}
+		
+		#pricing-table-1,
+		#pricing-table-2{
+			margin:0 0 20px 0;
+		}
+		
+		.ui-datepicker { 
+			width:245px;
+		}
+		
+		.ui-datepicker .ui-datepicker-calendar a,
+		.ui-datepicker .ui-datepicker-calendar span {
+			width:26px;
+		}
+		
+    }

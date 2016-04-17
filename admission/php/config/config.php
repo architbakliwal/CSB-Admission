@@ -52,7 +52,7 @@
 	$host = 'sgssr1.supercp.com';
 	$port = 465;                             		// Can be 465, 587, 25
 	$smtpusername = 'admissions@csbedu.in';			// Need to be equal to $youremail
-	$smtppassword = '1UZEb7XxDw';
+	$smtppassword = '5vuJUFy66X';
 
 	// If you want file upload turn this to true!
 	$upload = true;

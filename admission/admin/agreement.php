@@ -53,7 +53,7 @@ if ( strlen( trim( $_SESSION['userName'] ) ) == 0 ) {
 	    <?php if ( $_SESSION['userLogin'] && $_SESSION['userName'] ) { ?>
 		<div class="wrapper">
 		    <div class="form-bar">
-				<div class="top-bar bar-orange"></div>
+				<div class="top-bar bar-blue"></div>
 			</div>
 	        <div class="header dashboard_header">
 			    <div class="grid-container">
@@ -91,7 +91,7 @@ if ( strlen( trim( $_SESSION['userName'] ) ) == 0 ) {
 													</div>
 													<div class="column-twelve" style="margin:30px;">
 														<div class="column-two">
-															<button type="button" id="submit-final" class="button button-large button-orange">Submit</button>
+															<button type="button" id="submit-final" class="button button-large button-blue">Submit</button>
 														</div>
 													</div>
 													<!-- <div class="column-twelve">

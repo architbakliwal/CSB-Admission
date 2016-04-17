@@ -62,13 +62,13 @@ $finalpasstoken = htmlspecialchars( $passtoken, ENT_QUOTES, 'UTF-8' );
 
 		<div class="container">
 		    <div class="form-bar" id="newpassword">
-				<div class="top-bar bar-orange"></div>
+				<div class="top-bar bar-blue"></div>
 			</div>
 			<div class="form">
 				<div class="header">
 					<div class="grid-container">
 						<div class="column-twelve">
-							<img src="images/logo.JPG"/>
+							<img src="images/logo.png"/>
 						</div>
 						<div class="column-twelve">
 							<h4><i class="icon-key"></i><?php echo $lang['form_new_password_title'];?></h4>
@@ -104,7 +104,7 @@ $finalpasstoken = htmlspecialchars( $passtoken, ENT_QUOTES, 'UTF-8' );
 								    </div>
 								</div>
 								<div class="column-twelve">
-									<button type="submit" id="newpassword-button" class="button button-large button-orange"><?php echo $lang['form_new_password_button_new_password'];?></button>
+									<button type="submit" id="newpassword-button" class="button button-large button-blue"><?php echo $lang['form_new_password_button_new_password'];?></button>
 								</div>
 							</div>
 						</fieldset>

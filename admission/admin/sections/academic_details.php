@@ -805,7 +805,7 @@
 										</div>
 									</div>
 									<div class="column-four">
-										<button type="button" id="add-extra-academic" class="button button-large button-orange">Add another academic qualification</button>
+										<button type="button" id="add-extra-academic" class="button button-large button-blue">Add another academic qualification</button>
 									</div>
 									<div class="column-four">
 										<button type="button" id="add-extra-academic-delete" class="button button-large button-red">Remove</button>
@@ -1479,7 +1479,7 @@
 										</div>
 									</div>
 									<div class="column-four">
-										<button type="button" id="add-extra-academicextra" class="button button-large button-orange clone">Add another academic qualification</button>
+										<button type="button" id="add-extra-academicextra" class="button button-large button-blue clone">Add another academic qualification</button>
 									</div>
 									<div class="column-four">
 										<button type="button" id="add-extra-academicextra-delete" class="button button-large button-red delete">Remove</button>

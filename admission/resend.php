@@ -32,13 +32,13 @@ if ( isset( $_GET['lang'] ) and array_key_exists( $_GET['lang'], $language ) ) {
 
 		<div class="container">
 		    <div class="form-bar" id="resend">
-				<div class="top-bar bar-orange"></div>
+				<div class="top-bar bar-blue"></div>
 			</div>
 			<div class="form">
 				<div class="header">
 					<div class="grid-container">
 						<div class="column-twelve">
-							<img src="images/logo.JPG"/>
+							<img src="images/logo.png"/>
 						</div>
 						<div class="column-twelve">
 							<h4><i class="icon-spinner-12"></i><?php echo $lang['form_resend_activation_token_title'];?></h4>
@@ -82,7 +82,7 @@ if ( isset( $_GET['lang'] ) and array_key_exists( $_GET['lang'], $language ) ) {
                                 </div>
 								<?php } ?>
 								<div class="column-twelve">
-									<button type="submit" id="resend-button" class="button button-large button-orange"><?php echo $lang['form_resend_activation_token_button'];?></button>
+									<button type="submit" id="resend-button" class="button button-large button-blue"><?php echo $lang['form_resend_activation_token_button'];?></button>
 								</div>
 							</div>
 						</fieldset>

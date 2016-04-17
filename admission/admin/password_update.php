@@ -55,7 +55,7 @@ $user = mysql_fetch_array( $userInfo );
 
 		<div class="wrapper">
 		    <div class="form-bar">
-				<div class="top-bar bar-orange"></div>
+				<div class="top-bar bar-blue"></div>
 			</div>
 			<div class="form">
 				<div class="header dashboard_header">
@@ -110,7 +110,7 @@ $user = mysql_fetch_array( $userInfo );
 									</div>
 								</div>
 								<div class="column-twelve">
-									<button type="submit" id="update-password-button" class="button button-large button-orange"><?php echo $lang['update_password_button'];?></button>
+									<button type="submit" id="update-password-button" class="button button-large button-blue"><?php echo $lang['update_password_button'];?></button>
 								</div>
 							</div>
 						</fieldset>

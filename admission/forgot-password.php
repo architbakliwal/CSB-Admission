@@ -31,13 +31,13 @@ if ( isset( $_GET['lang'] ) and array_key_exists( $_GET['lang'], $language ) ) {
 
 		<div class="container">
 		    <div class="form-bar" id="forgot">
-                <div class="top-bar bar-orange"></div>
+                <div class="top-bar bar-blue"></div>
             </div>
 			<div class="form">
 				<div class="header">
 					<div class="grid-container">
 						<div class="column-twelve">
-							<img src="images/logo.JPG"/>
+							<img src="images/logo.png"/>
 						</div>
 						<div class="column-twelve">
 							<h4><i class="icon-key"></i><?php echo $lang['form_forgot_title'];?></h4>
@@ -81,7 +81,7 @@ if ( isset( $_GET['lang'] ) and array_key_exists( $_GET['lang'], $language ) ) {
                                 </div>
 								<?php } ?>
 								<div class="column-twelve">
-									<button type="submit" id="forgot-button" class="button button-large button-orange"><?php echo $lang['form_forgot_button_forgot'];?></button>
+									<button type="submit" id="forgot-button" class="button button-large button-blue"><?php echo $lang['form_forgot_button_forgot'];?></button>
 								</div>
 							</div>
 						</fieldset>

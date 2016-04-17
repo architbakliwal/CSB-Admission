@@ -36,13 +36,13 @@ if ( $_SESSION['userLogin'] && $_SESSION['userName'] ) {
 
 		<div class="container container-small">
 		    <div class="form-bar" id="login">
-				<div class="top-bar bar-orange"></div>
+				<div class="top-bar bar-blue"></div>
 			</div>
 			<div class="form">
 				<div class="header">
 					<div class="grid-container">
 						<div class="column-twelve">
-							<img src="images/logo.JPG"/>
+							<img src="images/logo.png"/>
 						</div>
 						<div class="column-twelve">
 							<h4><i class="icon-lock-2"></i><?php echo $lang['form_login_title'];?></h4>
@@ -92,7 +92,7 @@ if ( $_SESSION['userLogin'] && $_SESSION['userName'] ) {
                                 </div>
 								<?php } ?>
 								<div class="column-twelve">
-									<button type="submit" id="login-button" class="button button-large button-orange"><?php echo $lang['form_login_button_login'];?></button>
+									<button type="submit" id="login-button" class="button button-large button-blue"><?php echo $lang['form_login_button_login'];?></button>
 								</div>
 							</div>
 						</fieldset>

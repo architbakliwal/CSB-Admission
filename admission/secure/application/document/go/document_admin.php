@@ -52,7 +52,7 @@ $pdf->AddPage();
 
 $pdf->SetFont('helvetica', 'B', 10);
 
-$image_file = K_PATH_IMAGES.'logo.jpg';
+$image_file = K_PATH_IMAGES.'logo.png';
 $pdf->Image($image_file, 0, 15, 0, 0, 'JPG', '', 'M', false, 150, 'C', false, false, 1, false, false, false);
 
 $pdf->Ln(6);

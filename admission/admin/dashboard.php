@@ -66,12 +66,12 @@ if ( !$_SESSION['userLogin'] && !$_SESSION['userName'] && !isset( $_SESSION['use
 	    <?php if ( $_SESSION['userLogin'] && $_SESSION['userName'] ) { ?>
 		<div class="wrapper">
 		    <div class="form-bar">
-				<div class="top-bar bar-orange"></div>
+				<div class="top-bar bar-blue"></div>
 			</div>
 	        <div class="header dashboard_header">
 			    <div class="grid-container">
 			    	<div class="column-twelve">
-						<img src="../images/logo.JPG"/>
+						<img src="../images/logo.png"/>
 					</div>
 			    	<div class="column-twelve">
 						<h4><?php echo $lang['dashboard_title'];?></h4>
@@ -168,7 +168,7 @@ if ( !$_SESSION['userLogin'] && !$_SESSION['userName'] && !isset( $_SESSION['use
 
 		<div class="wrapper">
 		    <div class="form-bar">
-				<div class="top-bar bar-orange"></div>
+				<div class="top-bar bar-blue"></div>
 			</div>
 			<div class="form">
 				<div class="header">

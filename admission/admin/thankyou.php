@@ -53,7 +53,7 @@
 
 		<div class="wrapper"> 
 		    <div class="form-bar">
-				<div class="top-bar bar-orange"></div>
+				<div class="top-bar bar-blue"></div>
 			</div>
 	        <div class="header dashboard_header">
 			    <div class="grid-container">

@@ -34,12 +34,12 @@ if ( $_SESSION['userLogin'] && $_SESSION['userName'] ) {
     <body>
 		<div class="wrapper small-wrapper">
 		    <div class="form-bar">
-				<div class="top-bar bar-orange"></div>
+				<div class="top-bar bar-blue"></div>
 			</div>
 	        <div class="header">
 			    <div class="grid-container">
 			    	<div class="column-twelve">
-						<img src="images/logo.JPG"/>
+						<img src="images/logo.png"/>
 					</div>
                     <div class="column-twelve">
 						<h2><?php echo $lang['index_title'];?></h2>
@@ -57,12 +57,12 @@ if ( $_SESSION['userLogin'] && $_SESSION['userName'] ) {
 						<p>Please read the <a href="#" target="_blank">instructions</a> before applying</p>
 					</div> -->
 					<div class="column-six">
-						<div class="box" id="box-1" style="background-color: #E66222;">
+						<div class="box" id="box-1" style="background-color: #103F56;">
 							<a href="<?php echo $baseurl;?>login.php?lang=<?php echo $_GET['lang'];?>"><h4>Existing user</h4><i class="icon-lock-2"></i><h4><?php echo $lang['index_login_your_account'];?></h4></a>
 						</div>
 					</div>
 					<div class="column-six">
-						<div class="box" id="box-2" style="background-color: #E66222;">
+						<div class="box" id="box-2" style="background-color: #103F56;">
 							<a href="<?php echo $baseurl;?>register.php?lang=<?php echo $_GET['lang'];?>"><h4>New user</h4><i class="icon-users"></i><h4><?php echo $lang['index_register_your_account'];?></h4></a>
 						</div>
 					</div>

@@ -72,20 +72,6 @@
 										</div>
 										<?php } ?>
 									</div>
-									<!-- <div class="column-two">
-										<p title="Digital or scanned pls. File Formats Supported: GIF, JPEG, JPG & PNG<br>Maximum file size : 400 Kb" id="tooltip-help"><b>Additional Certificates</b></p>
-									</div>
-									<div class="column-ten">
-										<?php if($upload == true){ ?>
-										<div class="file-group irequire">
-											<label for="certificates" class="group label-file">
-												<span class="button-upload blue">Choose</span>
-												<input type="file" id="certificates" name="certificates[]" class="file" onchange="document.getElementById('certificatesfake1').value = this.value.replace(/C:\\fakepath\\/i, '');" title="400 Kb" />
-												<input type="text" id="certificatesfake1" name="certificatesfake1" class="input" placeholder="No file selected"/>
-											</label>
-										</div>
-										<?php } ?>
-									</div> -->
 								</div>
 							</div>
 						</div>

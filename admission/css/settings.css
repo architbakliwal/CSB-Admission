@@ -221,7 +221,7 @@ body {
 
 .bar-orange {
     background-color: #efa238;
-    width: 100%;
+    width: 12.5%;
 }
 
 .bar-yellow {
@@ -245,8 +245,8 @@ body {
 }
 
 .bar-blue {
-    background-color: #5cb6de;
-    width: 12.5%;
+    background-color: #103F56;
+    width: 100%;
 }
 
 .bar-blue-dark {
@@ -712,7 +712,7 @@ body {
     padding: 12px 20px;
     color: #ffffff;
     border-bottom: 1px solid #ddd;
-    background-color: #E86926;
+    background-color: #103F56;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -1891,8 +1891,7 @@ body {
     font-family: "Open Sans";
     font-size: 20px;
     color: #000;
-    margin: 0;
-    margin-bottom: 30px;
+    /*margin: 0;*/
     padding: 0;
 }
 
@@ -2180,15 +2179,15 @@ button.nav-button {
     -------------------------------------------------- */
 
 .button-blue {
-    background-color: #3597c2;
+    background-color: #103F56;
 }
 
 .button-blue:hover {
-    background-color: #3b9cc6;
+    background-color: #1C97BE;
 }
 
 .button-blue:active {
-    background-color: #3597c2;
+    background-color: #103F56;
 }
 
 

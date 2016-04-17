@@ -135,7 +135,7 @@
 										    </div>
 										</div>
 										<div class="column-four">
-											<button type="button" id="add-extra-workex" class="button button-large button-orange clone">Add another work experience</button>
+											<button type="button" id="add-extra-workex" class="button button-large button-blue clone">Add another work experience</button>
 										</div>
 										<div class="column-four">
 	                                        <button type="button" id="add-extra-workex-delete" class="button button-large button-red delete">Remove</button>

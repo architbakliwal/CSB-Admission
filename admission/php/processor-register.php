@@ -69,7 +69,7 @@ if ( $SMTP == true ) {
 
 			$uid = mysql_real_escape_string( $queryid['uid'] );
 			$applicationid = str_pad( $uid, 6, '0', STR_PAD_LEFT );
-			$applicationid = 'VS'. $year . $applicationid;
+			$applicationid = 'CSB'. $year . $applicationid;
 
 			$finalusername = $applicationid;
 

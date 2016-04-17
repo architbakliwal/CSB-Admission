@@ -143,7 +143,7 @@
 	
     // Index page
 	 
-    $lang['index_title']		                        = 'Crescent School of Business</br></br>Online Application Form '.$year; 
+    $lang['index_title']		                        = 'CRESCENT SCHOOL OF BUSINESS</br></br>Online Application Form '.$year; 
 	$lang['index_register_your_account']		        = 'Register'; 
 	$lang['index_login_your_account']		            = 'Login'; 
 	$lang['index_forgot_your_password']		            = 'Forgot your Password';	

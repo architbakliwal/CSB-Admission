@@ -62,7 +62,7 @@ if ( $_GET['provider'] ) {
 
 		<div class="container">
 		    <div class="form-bar" id="complete-social-register">
-                <div class="top-bar bar-orange"></div>
+                <div class="top-bar bar-blue"></div>
             </div>
 			<div class="form">
 				<div class="header">

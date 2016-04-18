@@ -474,12 +474,12 @@ jQuery.noConflict()(function($) {
                         $("label[for='sky-tab7']").css('background-color', '#F22613');
                         docstatus = false;
                     } else if (response.status === 'P') {
-                        swal({
+                        /*swal({
                             title: "Success!",
                             text: "Documents uploaded!!",
                             type: "success",
                             animation: false
-                        });
+                        });*/
                     }
 
                     if ($("#section_personal").valid()) {
@@ -522,14 +522,27 @@ jQuery.noConflict()(function($) {
                         refreestatus = false;
                     }
 
-                    if (personalstatus && contactstatus && academicestatus && workexstatus && refreestatus && docstatus) {
-                        // if (docstatus) {
+                    if ($("#section_additional_info").valid()) {
+                        $("label[for='sky-tab6']").css('background-color', '#26C281');
+                        additionalinfostatus = true;
+                    } else {
+                        $("label[for='sky-tab6']").css('background-color', '#F22613');
+                        additionalinfostatus = false;
+                    }
+
+                    if (personalstatus && contactstatus && academicestatus && workexstatus && refreestatus && additionalinfostatus && docstatus) {
                         isApplicationValid = true;
                         if (response.status === 'P') {
                             window.location = response.msg + "admin/agreement.php";
                         }
                     } else {
                         isApplicationValid = false;
+                        swal({
+                            title: "Error!",
+                            text: "Please fill all the required fields in each section",
+                            type: "error",
+                            animation: false
+                        });
                     }
 
                     changeSectionStatus();

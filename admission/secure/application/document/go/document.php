@@ -50,7 +50,7 @@ $pdf->AddPage();
 
 $pdf->SetFont('helvetica', 'B', 10);
 
-$image_file = K_PATH_IMAGES.'logo.png';
+$image_file = K_PATH_IMAGES.'logo.jpg';
 $pdf->Image($image_file, 0, 15, 0, 0, 'JPG', '', 'M', false, 150, 'C', false, false, 1, false, false, false);
 
 $pdf->Ln(6);
@@ -74,7 +74,7 @@ $tbl = <<<EOD
 
     }
     table th {
-        background-color: #E86926;
+        background-color: #103F56;
         text-align: left;
         font-size: 15px;
         font-weight: bold;
@@ -351,7 +351,7 @@ $tbl = <<<EOD
 
     }
     table th {
-        background-color: #E86926;
+        background-color: #103F56;
         text-align: left;
         font-size: 15px;
         font-weight: bold;
@@ -447,7 +447,7 @@ $tbl = <<<EOD
 
     }
     table th {
-        background-color: #E86926;
+        background-color: #103F56;
         text-align: left;
         font-size: 15px;
         font-weight: bold;
@@ -546,7 +546,7 @@ $tbl = <<<EOD
 
     }
     table th {
-        background-color: #E86926;
+        background-color: #103F56;
         text-align: left;
         font-size: 15px;
         font-weight: bold;
@@ -620,7 +620,7 @@ $tbl = <<<EOD
 
     }
     table th {
-        background-color: #E86926;
+        background-color: #103F56;
         text-align: left;
         font-size: 15px;
         font-weight: bold;

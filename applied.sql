@@ -1,10 +1,10 @@
 SELECT log.`login_system_login_attempts_first_date` AS 'applied_date',
-       ad.`application_id`,
-       ad.`f_name`,
-       ad.`l_name`,
-       ad.`m_name`,
-       ad.`email_id`,
-       ad.`application_status`,
+       a.`application_id`,
+       a.`f_name`,
+       a.`l_name`,
+       a.`m_name`,
+       a.`email_id`,
+       a.`application_status`,
        p.`user_dob`,
        p.`age`,
        p.`gender`,
@@ -120,10 +120,10 @@ SELECT log.`login_system_login_attempts_first_date` AS 'applied_date',
        info.`failure_info`,
        info.`acheivement_as_alumnus`,
        info.`support_info`,
-       a.`last_update_date`
-FROM `admission_section_status` a
+       ad.`last_update_date`
+FROM `admission_users` a
 LEFT JOIN `login_system_login_attempts` log ON a.application_id = log.login_system_login_attempts_username
-LEFT JOIN `admission_users` ad ON a.application_id = ad.application_id
+LEFT JOIN `admission_section_status` ad ON a.application_id = ad.application_id
 LEFT JOIN `users_personal_details` p ON a.application_id = p.application_id
 LEFT JOIN `users_contact_details` c ON a.application_id = c.application_id
 LEFT JOIN `users_academic_details` ac ON a.application_id = ac.application_id

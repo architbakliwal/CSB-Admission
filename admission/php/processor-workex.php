@@ -53,6 +53,7 @@ $workcompleted = strip_tags( trim( $_POST['workcompleted'] ) );
 $comapnyjoinedas = strip_tags( trim( $_POST['comapnyjoinedas'] ) );
 $currentdesignation = strip_tags( trim( $_POST['currentdesignation'] ) );
 $annualrenumeration = strip_tags( trim( $_POST['annualrenumeration'] ) );
+$currentlyworking = strip_tags( trim( $_POST['currentlyworking'] ) );
 $rolesandresponsibility = strip_tags( trim( $_POST['rolesandresponsibility'] ) );
 $extraworkexcount = strip_tags( trim( $_POST['extraworkexcount'] ) );
 $totalworkex = strip_tags( trim( $_POST['totalworkex'] ) );
@@ -70,6 +71,7 @@ $finalworkcompleted = htmlspecialchars( $workcompleted, ENT_QUOTES, 'UTF-8' );
 $finalcomapnyjoinedas = htmlspecialchars( $comapnyjoinedas, ENT_QUOTES, 'UTF-8' );
 $finalcurrentdesignation = htmlspecialchars( $currentdesignation, ENT_QUOTES, 'UTF-8' );
 $finalannualrenumeration = htmlspecialchars( $annualrenumeration, ENT_QUOTES, 'UTF-8' );
+$finalcurrentlyworking = htmlspecialchars( $currentlyworking, ENT_QUOTES, 'UTF-8' );
 $finalrolesandresponsibility = htmlspecialchars( $rolesandresponsibility, ENT_QUOTES, 'UTF-8' );
 $finalextraworkexcount = htmlspecialchars( $extraworkexcount, ENT_QUOTES, 'UTF-8' );
 $finaltotalworkex = htmlspecialchars( $totalworkex, ENT_QUOTES, 'UTF-8' );
@@ -77,7 +79,7 @@ $finaltotalworkex = htmlspecialchars( $totalworkex, ENT_QUOTES, 'UTF-8' );
 
 
 if ( $mysql == true ) {
-	$sqlworkex = "INSERT INTO `csbedu_admission`.`users_work_experience_details` (`application_id`, `work_experience`, `employement_type`, `name_of_organization`, `organization_type`, `organization_type_other`, `started_work_date`, `completed_work_date`, `joined_as`, `current_designation`, `annual_renumeration`, `roles_and_responsibilty`, `extra_workex_count`, `total_work_experience`) VALUES (
+	$sqlworkex = "INSERT INTO `csbedu_admission`.`users_work_experience_details` (`application_id`, `work_experience`, `employement_type`, `name_of_organization`, `organization_type`, `organization_type_other`, `started_work_date`, `completed_work_date`, `joined_as`, `current_designation`, `annual_renumeration`, `currently_working`, `roles_and_responsibilty`, `extra_workex_count`, `total_work_experience`) VALUES (
 				'".mysql_real_escape_string( $finalapplicationid )."',
 				'".mysql_real_escape_string( $finalisworkex )."',
 				'".mysql_real_escape_string( $finalemployementtype )."',
@@ -89,6 +91,7 @@ if ( $mysql == true ) {
 				'".mysql_real_escape_string( $finalcomapnyjoinedas )."',
 				'".mysql_real_escape_string( $finalcurrentdesignation )."',
 				'".mysql_real_escape_string( $finalannualrenumeration )."',
+				'".mysql_real_escape_string( $finalcurrentlyworking )."',
 				'".mysql_real_escape_string( $finalrolesandresponsibility )."',
 				'".mysql_real_escape_string( $finalextraworkexcount )."',
 				'".mysql_real_escape_string( $finaltotalworkex )."'
@@ -105,6 +108,7 @@ if ( $mysql == true ) {
 			joined_as = VALUES(joined_as),
 			current_designation = VALUES(current_designation),
 			annual_renumeration = VALUES(annual_renumeration),
+			currently_working = VALUES(currently_working),
 			roles_and_responsibilty = VALUES(roles_and_responsibilty),
 			extra_workex_count = VALUES(extra_workex_count),
 			total_work_experience = VALUES(total_work_experience)
@@ -138,6 +142,7 @@ if ( $mysql == true ) {
 		$icomapnyjoinedas = "comapnyjoinedas{$x}";
 		$icurrentdesignation = "currentdesignation{$x}";
 		$iannualrenumeration = "annualrenumeration{$x}";
+		$icurrentlyworking = "currentlyworking{$x}";
 		$irolesandresponsibility = "rolesandresponsibility{$x}";
 		$iextraworkexcount = "extraworkexcount{$x}";
 		$itotalworkex = "totalworkex{$x}";
@@ -153,6 +158,7 @@ if ( $mysql == true ) {
 		${'comapnyjoinedas' . $x} = strip_tags( trim( $_POST[$icomapnyjoinedas] ) );
 		${'currentdesignation' . $x} = strip_tags( trim( $_POST[$icurrentdesignation] ) );
 		${'annualrenumeration' . $x} = strip_tags( trim( $_POST[$iannualrenumeration] ) );
+		${'currentlyworking' . $x} = strip_tags( trim( $_POST[$icurrentlyworking] ) );
 		${'rolesandresponsibility' . $x} = strip_tags( trim( $_POST[$irolesandresponsibility] ) );
 		${'extraworkexcount' . $x} = strip_tags( trim( $_POST[$iextraworkexcount] ) );
 		${'totalworkex' . $x} = strip_tags( trim( $_POST[$itotalworkex] ) );
@@ -167,12 +173,13 @@ if ( $mysql == true ) {
 		${'finalcomapnyjoinedas' . $x} = htmlspecialchars( ${'comapnyjoinedas' . $x}, ENT_QUOTES, 'UTF-8' );
 		${'finalcurrentdesignation' . $x} = htmlspecialchars( ${'currentdesignation' . $x}, ENT_QUOTES, 'UTF-8' );
 		${'finalannualrenumeration' . $x} = htmlspecialchars( ${'annualrenumeration' . $x}, ENT_QUOTES, 'UTF-8' );
+		${'finalcurrentlyworking' . $x} = htmlspecialchars( ${'currentlyworking' . $x}, ENT_QUOTES, 'UTF-8' );
 		${'finalrolesandresponsibility' . $x} = htmlspecialchars( ${'rolesandresponsibility' . $x}, ENT_QUOTES, 'UTF-8' );
 		${'finalextraworkexcount' . $x} = htmlspecialchars( ${'extraworkexcount' . $x}, ENT_QUOTES, 'UTF-8' );
 		${'finaltotalworkex' . $x} = htmlspecialchars( ${'totalworkex' . $x}, ENT_QUOTES, 'UTF-8' );
 
 
-		$sqlworkexextra = "INSERT INTO `csbedu_admission`.`added_work_experience_details` (`application_id`, `employement_type`, `name_of_organization`, `organization_type`, `organization_type_other`, `started_work_date`, `completed_work_date`, `joined_as`, `current_designation`, `annual_renumeration`, `roles_and_responsibilty`) VALUES (
+		$sqlworkexextra = "INSERT INTO `csbedu_admission`.`added_work_experience_details` (`application_id`, `employement_type`, `name_of_organization`, `organization_type`, `organization_type_other`, `started_work_date`, `completed_work_date`, `joined_as`, `current_designation`, `annual_renumeration`, `currently_working`, `roles_and_responsibilty`) VALUES (
 				'".mysql_real_escape_string( $finalapplicationid )."',
 				'".mysql_real_escape_string( ${'finalemployementtype' . $x} )."',
 				'".mysql_real_escape_string( ${'finalorganizationname' . $x} )."',
@@ -183,6 +190,7 @@ if ( $mysql == true ) {
 				'".mysql_real_escape_string( ${'finalcomapnyjoinedas' . $x} )."',
 				'".mysql_real_escape_string( ${'finalcurrentdesignation' . $x} )."',
 				'".mysql_real_escape_string( ${'finalannualrenumeration' . $x} )."',
+				'".mysql_real_escape_string( ${'finalcurrentlyworking' . $x} )."',
 				'".mysql_real_escape_string( ${'finalrolesandresponsibility' . $x} )."'
 				);";
 

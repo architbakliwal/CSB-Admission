@@ -4,7 +4,8 @@
  * http://yapapayalabs.com/projects/jquery-cloneya
  * License GNU/GPL & MIT
  */
-;(function($) {
+;
+(function($) {
 
     // Create the cbelass CloneYa
     /**
@@ -113,7 +114,7 @@
                 });
 
                 // get the form input
-                $newclone.find('input, textarea, select, label').each(function() {
+                $newclone.find('input[type!="checkbox"], textarea, select, label').each(function() {
 
                     // check if the values need to be copied, if not empty them
                     if (!config.valueClone) {
@@ -196,11 +197,11 @@
         elem.on('clone_after_delete', function(event) {
             // get the count of all the clones
             var cloneCount = elem.find(config.cloneThis).length;
-            if(elem.attr('id') == 'academic-clone') {
+            if (elem.attr('id') == 'academic-clone') {
                 $('#extraacademiccount').val(cloneCount);
 
-            } else if(elem.attr('id') == 'workex-clone') {
-                $('#extraworkexcount').val(cloneCount-1);
+            } else if (elem.attr('id') == 'workex-clone') {
+                $('#extraworkexcount').val(cloneCount - 1);
             }
         });
 
@@ -208,14 +209,14 @@
 
             // get the count of all the clones
             var cloneCount = elem.find(config.cloneThis).length;
-            if(elem.attr('id') == 'academic-clone') {
+            if (elem.attr('id') == 'academic-clone') {
                 $('#extraacademiccount').val(cloneCount);
 
-            } else if(elem.attr('id') == 'workex-clone') {
-                $('#extraworkexcount').val(cloneCount-1);
+            } else if (elem.attr('id') == 'workex-clone') {
+                $('#extraworkexcount').val(cloneCount - 1);
             }
 
-            $('input', document).each(function( index, element ) {
+            $('input', document).each(function(index, element) {
                 $(this).attr('title', $(this).attr('placeholder'));
             });
 
@@ -224,17 +225,17 @@
                 position: 'top'
             });
 
-            $(".workstarted, .workcompleted").on('focus', function(){
+            $(".workstarted, .workcompleted").on('focus', function() {
                 var $this = $(this);
                 $this.removeClass("hasDatepicker");
-                $this.datepicker( {
+                $this.datepicker({
                     changeMonth: true,
                     changeYear: true,
                     dateFormat: 'yy-mm-dd',
                     yearRange: '1950:' + currentYear
                 });
                 $this.datepicker("show");
-                
+
             });
 
         });
@@ -290,7 +291,7 @@
                     }
 
                     var labelfor = $(this).attr('for');
-                    if(labelfor) {
+                    if (labelfor) {
                         // match the id with the regex to get the string part
                         // separate from the number part 
                         var match = labelfor.match(regex);
@@ -327,8 +328,8 @@
                         }
                     }
 
-                    if(config.removeRequired) {
-                        $(this).removeClass( "irequire" );
+                    if (config.removeRequired) {
+                        $(this).removeClass("irequire");
                     }
 
 
@@ -349,6 +350,10 @@
                         }
                     }*/
 
+                });
+
+                $(this).find('input[type="checkbox"]').each(function() {
+                    // $(this).attr('checked', false);
                 });
             });
 

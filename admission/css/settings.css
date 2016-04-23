@@ -786,7 +786,7 @@ body {
     font-weight: normal;
     font-size: 13px;
     font-family: "Open Sans";
-    color: #999;
+    color: #000000;
 }
 
 .form .checkbox + .space-right::before,

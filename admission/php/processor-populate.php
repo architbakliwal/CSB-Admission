@@ -260,6 +260,7 @@ if ( isset( $_GET['lang'] ) and array_key_exists( $_GET['lang'], $language ) ) {
 			$row_array3['comapnyjoinedas'] = htmldecode($row['joined_as']);
 			$row_array3['currentdesignation'] = htmldecode($row['current_designation']);
 			$row_array3['annualrenumeration'] = $row['annual_renumeration'];
+			$row_array3['currentlyworking'] = $row['currently_working'];
 			$row_array3['rolesandresponsibility'] = htmldecode($row['roles_and_responsibilty']);
 			$row_array3['extraworkexcount'] = $row['extra_workex_count'];
 			$row_array3['totalworkex'] = $row['total_work_experience'];			
@@ -289,6 +290,7 @@ if ( isset( $_GET['lang'] ) and array_key_exists( $_GET['lang'], $language ) ) {
 			$icomapnyjoinedas = "comapnyjoinedas{$x}";
 			$icurrentdesignation = "currentdesignation{$x}";
 			$iannualrenumeration = "annualrenumeration{$x}";
+			$icurrentlyworking = "currentlyworking{$x}";
 			$irolesandresponsibility = "rolesandresponsibility{$x}";
 			$itotalworkex = "totalworkex{$x}";
 
@@ -302,6 +304,7 @@ if ( isset( $_GET['lang'] ) and array_key_exists( $_GET['lang'], $language ) ) {
 			$row_array3[$icomapnyjoinedas] = htmldecode($row['joined_as']);
 			$row_array3[$icurrentdesignation] = htmldecode($row['current_designation']);
 			$row_array3[$iannualrenumeration] = $row['annual_renumeration'];
+			$row_array3[$icurrentlyworking] = $row['currently_working'];
 			$row_array3[$irolesandresponsibility] = htmldecode($row['roles_and_responsibilty']);
 			$row_array3[$itotalworkex] = $row['total_work_experience'];	
 

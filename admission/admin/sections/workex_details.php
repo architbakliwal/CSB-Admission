@@ -120,6 +120,15 @@
 												</label>
 										    </div>
 										</div>
+										<div class="column-twelve">
+										    <div class="checkbox-group space-bottom" style="text-align:left;">
+										        <label for="currentlyworking" class="group space-right">
+										            <input type="checkbox" name="currentlyworking" class="checkbox" value="Y" id="currentlyworking">
+										            <span class="label space-right">Currently working here?</span>
+										        </label>
+										    </div>
+										</div>
+
 										<div class="column-eight">
 											<div class="textarea-group irequire">
 											    <label for="rolesandresponsibility" class="group label-textarea">

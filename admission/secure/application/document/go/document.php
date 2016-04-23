@@ -506,7 +506,9 @@ $tbl = <<<EOD
     </tr>
     <tr nobr="true">
         <td class="boldstyle">Annual remuneration in INR:</td>
-        <td colspan="3">$annual_renumeration</td>
+        <td>$annual_renumeration</td>
+        <td class="boldstyle">Currently working here:</td>
+        <td>$currently_working</td>
     </tr>
     <tr nobr="true">
         <td class="boldstyle">Description of roles and responsibility:</td>
@@ -598,7 +600,9 @@ $tbl = <<<EOD
     </tr>
     <tr nobr="true">
         <td class="boldstyle">Annual remuneration in INR:</td>
-        <td colspan="3">$extra_workex[$iannualrenumeration]</td>
+        <td>$extra_workex[$iannualrenumeration]</td>
+        <td class="boldstyle">Currently working here:</td>
+        <td>$extra_workex[$icurrentlyworking]</td>
     </tr>
     <tr nobr="true">
         <td class="boldstyle">Description of roles and responsibility:</td>

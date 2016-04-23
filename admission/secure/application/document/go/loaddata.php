@@ -320,6 +320,7 @@
 		$joined_as = $row['joined_as'];
 		$current_designation = $row['current_designation'];
 		$annual_renumeration = $row['annual_renumeration'];
+		$currently_working = $row['currently_working'];
 		$roles_and_responsibilty = $row['roles_and_responsibilty'];
 		$extra_workex_count = $row['extra_workex_count'];
 		$total_work_experience = $row['total_work_experience'];
@@ -347,6 +348,7 @@
 		$icomapnyjoinedas = "comapnyjoinedas{$x}";
 		$icurrentdesignation = "currentdesignation{$x}";
 		$iannualrenumeration = "annualrenumeration{$x}";
+		$icurrentlyworking = "currentlyworking{$x}";
 		$irolesandresponsibility = "rolesandresponsibility{$x}";
 
 		$extra_workex[$iemployementtype] = $row['employement_type'];
@@ -391,6 +393,7 @@
 		$extra_workex[$icomapnyjoinedas] = $row['joined_as'];
 		$extra_workex[$icurrentdesignation] = $row['current_designation'];
 		$extra_workex[$iannualrenumeration] = $row['annual_renumeration'];
+		$extra_workex[$icurrentlyworking] = $row['currently_working'];
 		$extra_workex[$irolesandresponsibility] = $row['roles_and_responsibilty'];
 	    
 	    $x = $x + 1;

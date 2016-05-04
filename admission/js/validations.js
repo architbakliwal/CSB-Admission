@@ -7,8 +7,6 @@ jQuery.noConflict()(function($) {
         $("input[name=mobilenumber]").ForceNumericOnly();
         $("input[name=phonenumber]").ForceNumericOnly();
         $("input[name=emergencymobile]").ForceNumericOnly();
-        $("input[name=annualrenumeration]").ForceNumericOnly();
-        $("input[name=totalworkex]").ForceNumericOnly();
         $("input[name=refreecontact]").ForceNumericOnly();
 
 
@@ -16,7 +14,7 @@ jQuery.noConflict()(function($) {
         $("input[name=middlename]").ForceAlphabestOnly();
         $("input[name=refreename]").ForceAlphabestOnly();
 
-        $("#academicachivements, #rolesandresponsibility, #refreeknowing, #rolemodelinfo, #failureinfo, #acheivementasalumnus, #supportinfo").on('keyup', function() {
+        $("#examscore, #refreeknowing, #aftermbaplan").on('keyup', function() {
             var words = this.value.match(/\S+/g).length;
             if (words > 200) {
                 // Split the string on first 200 words and rejoin on spaces
@@ -88,80 +86,6 @@ jQuery.noConflict()(function($) {
 
         // the following method must come AFTER .validate()
         $('#section_contact .itrequired').each(function() {
-            $(this).rules('add', {
-                required: true,
-            });
-        });
-
-        $("#section_academic").validate({
-
-            rules: {
-                tenthaggregate: {
-                    required: true,
-                    max: 100
-                },
-                twelfthaggregate: {
-                    required: true,
-                    max: 100
-                },
-                graduationpercentage: {
-                    required: true,
-                    max: 100
-                },
-                graduationgpaobtained: {
-                    required: true,
-                    number: true
-                },
-                graduationgpamax: {
-                    required: true,
-                    number: true
-                }
-            },
-
-            errorPlacement: function(error, element) {
-                $(element).tooltipster('update', $(error).text());
-            },
-            success: function(label, element) {
-
-            },
-            submitHandler: function(form) {
-
-            }
-        });
-
-        // the following method must come AFTER .validate()
-        $('#section_academic .itrequired').each(function() {
-            $(this).rules('add', {
-                required: true,
-            });
-        });
-
-        $("#section_workex").validate({
-
-            rules: {
-                workstarted: {
-                    required: true,
-                    dpDate: true
-                },
-                workcompleted: {
-                    required: true,
-                    dpDate: true
-                }
-            },
-
-            errorPlacement: function(error, element) {
-                $(element).tooltipster('update', $(error).text());
-            },
-            success: function(label, element) {
-
-            },
-            submitHandler: function(form) {
-
-            }
-        });
-
-        // the following method must come AFTER .validate()
-        $('#section_workex .itrequired').each(function() {
             $(this).rules('add', {
                 required: true,
             });

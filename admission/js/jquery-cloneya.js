@@ -197,24 +197,13 @@
         elem.on('clone_after_delete', function(event) {
             // get the count of all the clones
             var cloneCount = elem.find(config.cloneThis).length;
-            if (elem.attr('id') == 'academic-clone') {
-                $('#extraacademiccount').val(cloneCount);
 
-            } else if (elem.attr('id') == 'workex-clone') {
-                $('#extraworkexcount').val(cloneCount - 1);
-            }
         });
 
         elem.on('clone_after_append', function(event, $toclone, $newclone) {
 
             // get the count of all the clones
             var cloneCount = elem.find(config.cloneThis).length;
-            if (elem.attr('id') == 'academic-clone') {
-                $('#extraacademiccount').val(cloneCount);
-
-            } else if (elem.attr('id') == 'workex-clone') {
-                $('#extraworkexcount').val(cloneCount - 1);
-            }
 
             $('input', document).each(function(index, element) {
                 $(this).attr('title', $(this).attr('placeholder'));
@@ -223,19 +212,6 @@
             $('input', document).tooltipster({
                 offsetY: 2,
                 position: 'top'
-            });
-
-            $(".workstarted, .workcompleted").on('focus', function() {
-                var $this = $(this);
-                $this.removeClass("hasDatepicker");
-                $this.datepicker({
-                    changeMonth: true,
-                    changeYear: true,
-                    dateFormat: 'yy-mm-dd',
-                    yearRange: '1950:' + currentYear
-                });
-                $this.datepicker("show");
-
             });
 
         });

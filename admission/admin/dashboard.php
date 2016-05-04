@@ -104,15 +104,12 @@ if ( !$_SESSION['userLogin'] && !$_SESSION['userName'] && !isset( $_SESSION['use
 						<label for="sky-tab5">5</label>
 						<input type="radio" name="sky-tabs" id="sky-tab6" class="sky-tab-content-6">
 						<label for="sky-tab6">6</label>
-						<input type="radio" name="sky-tabs" id="sky-tab7" class="sky-tab-content-7">
-						<label for="sky-tab7">7</label>
 
 						</br>
 
 						<span><?php echo $lang['section_personal'];?></span>
 						<span><?php echo $lang['section_contact'];?></span>
-						<span><?php echo $lang['section_academic'];?></span>
-						<span><?php echo $lang['section_workex'];?></span>
+						<span><?php echo $lang['section_exam_score'];?></span>
 						<span><?php echo $lang['section_reference'];?></span>
 						<span><?php echo $lang['section_additional_info'];?></span>
 						<span><?php echo $lang['section_docs'];?></span>
@@ -127,22 +124,18 @@ if ( !$_SESSION['userLogin'] && !$_SESSION['userName'] && !isset( $_SESSION['use
 							</li>
 
 							<li class="sky-tab-content-3">
-								<?php include 'sections/academic_details.php'; ?>
+								<?php include 'sections/exam_details.php'; ?>
 							</li>
 
 							<li class="sky-tab-content-4">
-								<?php include 'sections/workex_details.php'; ?>
-							</li>
-
-							<li class="sky-tab-content-5">
 								<?php include 'sections/reference_details.php'; ?>
 							</li>
 
-							<li class="sky-tab-content-6">
+							<li class="sky-tab-content-5">
 								<?php include 'sections/additional_details.php'; ?>
 							</li>
 
-							<li class="sky-tab-content-7">
+							<li class="sky-tab-content-6">
 								<?php include 'sections/document_details.php'; ?>
 							</li>
 						</ul>

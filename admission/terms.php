@@ -47,7 +47,7 @@ if ( isset( $_GET['lang'] ) and array_key_exists( $_GET['lang'], $language ) ) {
 			<div class="section">
 				<div class="grid-container">
 					<div class="form">
-						<div class="section inner_section" id="academic-clone">
+						<div class="section inner_section" id="terms">
 							<form method="post" id="section_done">
 								<fieldset>
 									<div class="grid-container">

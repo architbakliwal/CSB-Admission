@@ -25,29 +25,8 @@
 								<div class="box-section center">
 								    <div class="column-twelve">
 										<div class="textarea-group irequire">
-										    <label for="rolemodelinfo" class="group label-textarea">
-				                                <textarea rows="5" id="rolemodelinfo" name="rolemodelinfo" class="textarea resisable" placeholder="Who is your role model? Explain the reasons behind your choice. (Max 200 words)"></textarea>
-											</label>
-									    </div>
-									</div>
-									<div class="column-twelve">
-										<div class="textarea-group irequire">
-										    <label for="failureinfo" class="group label-textarea">
-				                                <textarea rows="5" id="failureinfo" name="failureinfo" class="textarea resisable" placeholder="What according to you has been your biggest failure and how did you overcome it? (Max 200 words)"></textarea>
-											</label>
-									    </div>
-									</div>
-									<div class="column-twelve">
-										<div class="textarea-group irequire">
-										    <label for="acheivementasalumnus" class="group label-textarea">
-				                                <textarea rows="5" id="acheivementasalumnus" name="acheivementasalumnus" class="textarea resisable" placeholder="Describe your life in 2025, explain how CSB will help you get there. (Max 200 words)"></textarea>
-											</label>
-									    </div>
-									</div>
-									<div class="column-twelve">
-										<div class="textarea-group irequire">
-										    <label for="supportinfo" class="group label-textarea">
-				                                <textarea rows="5" id="supportinfo" name="supportinfo" class="textarea resisable" placeholder="Is there anything else you would like to mention that would add to your candidature for the programme? (Max 200 words)"></textarea>
+										    <label for="aftermbaplan" class="group label-textarea">
+				                                <textarea rows="5" id="aftermbaplan" name="aftermbaplan" class="textarea resisable" placeholder="What do you plan to do after your MBA. (Max 200 words)"></textarea>
 											</label>
 									    </div>
 									</div>

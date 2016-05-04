@@ -65,6 +65,7 @@
 	$lang['section_contact']		                    = 'Contact Details';
 	$lang['section_academic']		                    = 'Academic Qualifications';
 	$lang['section_workex']		                    	= 'Work Experience';
+	$lang['section_exam_score']		                    = 'Exam Score';
 	$lang['section_reference']		                    = 'References';
 	$lang['section_additional_info']		            = 'Additional Information';
 	$lang['section_docs']		                    	= 'Document Uploads';

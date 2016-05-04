@@ -43,16 +43,16 @@ if ( strlen( trim( $_SESSION['userName'] ) ) == 0 ) {
 }
 
 $applicationid = strip_tags( trim( $_SESSION['userName'] ) );
-$aftermbaplan = strip_tags( trim( $_POST["aftermbaplan"] ) );
+$examscore = strip_tags( trim( $_POST["examscore"] ) );
 
 $finalapplicationid = htmlspecialchars( $applicationid, ENT_QUOTES, 'UTF-8' );
-$finalaftermbaplan = htmlspecialchars( $aftermbaplan, ENT_QUOTES, 'UTF-8' );
+$finalexamscore = htmlspecialchars( $examscore, ENT_QUOTES, 'UTF-8' );
 
 if ( $mysql == true ) {
-	$sqladditionalinfo = "INSERT INTO `csbedu_admission`.`user_additional_info` (`application_id`, `after_mba_plan`) VALUES ('".mysql_real_escape_string( $finalapplicationid )."','".mysql_real_escape_string( $finalaftermbaplan )."')
+	$sqladditionalinfo = "INSERT INTO `csbedu_admission`.`user_exam_score` (`application_id`, `exam_score`) VALUES ('".mysql_real_escape_string( $finalapplicationid )."','".mysql_real_escape_string( $finalexamscore )."')
 		ON DUPLICATE KEY
 		UPDATE
-		after_mba_plan = VALUES(after_mba_plan)
+		exam_score = VALUES(exam_score)
 		;";
 
 	$insertaddtionalinfo = mysql_query( $sqladditionalinfo );

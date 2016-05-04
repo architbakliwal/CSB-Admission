@@ -3,8 +3,7 @@ var isApplicationValid = true;
 var baseurl = '';
 var personalstatus = false;
 var contactstatus = false;
-var academicestatus = false;
-var workexstatus = false;
+var examscorestatus = false;
 var refreestatus = false;
 var additionalinfostatus = false;
 var docstatus = false;
@@ -26,26 +25,6 @@ jQuery.noConflict()(function($) {
         $.fn.changeVal = function(v) {
             return $(this).val(v).trigger("change");
         };
-
-        $('#academic-clone').cloneya({
-            removeRequired: true,
-            isNumberPresent: true
-        });
-
-        $('#workex-clone').cloneya({
-            limit: 3
-        });
-
-        $("#add-extra-academic").click(function() {
-            $('#section_academic .toclone').css('display', 'block');
-            $('#extraacademiccount').val('1');
-            $("#add-extra-academic").css('display', 'none');
-        });
-
-        $("#add-extra-academic-delete").click(function() {
-            $('#section_academic .toclone').css('display', 'none');
-            $("#add-extra-academic").css('display', 'block');
-        });
 
         $(".irequire input").addClass('itrequired');
         $(".irequire select").addClass('itrequired');
@@ -136,93 +115,6 @@ jQuery.noConflict()(function($) {
             }
         });
 
-        $("#tenthboard").change(function() {
-            if ($("#tenthboard").val() == 'Others' || $("#tenthboard").val() == 'State Board') {
-                $("#tenthboardothers-div").addClass('irequire');
-                $("#tenthboardothers").removeAttr('disabled');
-            } else {
-                $("#tenthboardothers-div").removeClass('irequire');
-                $("#tenthboardothers").val('');
-                $("#tenthboardothers").attr('disabled', 'disabled');
-            }
-        });
-
-        $("#twelfthboard").change(function() {
-            if ($("#twelfthboard").val() == 'Others' || $("#twelfthboard").val() == 'State Board') {
-                $("#twelfthboardothers-div").addClass('irequire');
-                $("#twelfthboardothers").removeAttr('disabled');
-            } else {
-                $("#twelfthboardothers-div").removeClass('irequire');
-                $("#twelfthboardothers").val('');
-                $("#twelfthboardothers").attr('disabled', 'disabled');
-            }
-        });
-
-        $("#gradutationunversity").change(function() {
-            if ($("#gradutationunversity").val() == '523' || $("#gradutationunversity").val() == '335' || $("#gradutationunversity").val() == '100') {
-                $("#graduationuniversityothers-div").addClass('irequire');
-                $("#graduationuniversityothers").removeAttr('disabled');
-            } else {
-                $("#graduationuniversityothers-div").removeClass('irequire');
-                $("#graduationuniversityothers").val('');
-                $("#graduationuniversityothers").attr('disabled', 'disabled');
-            }
-        });
-
-        $("#graduationdiscipline").change(function() {
-            if ($("#graduationdiscipline").val() == '28') {
-                $("#graduationdisciplineother-div").addClass('irequire');
-                $("#graduationdisciplineother").removeAttr('disabled');
-            } else {
-                $("#graduationdisciplineother-div").removeClass('irequire');
-                $("#graduationdisciplineother").val('');
-                $("#graduationdisciplineother").attr('disabled', 'disabled');
-            }
-        });
-
-        $("#graduationcompleted").change(function() {
-            if ($("#graduationcompleted").val() == 'Yes') {
-                $("#gradationcompletionyear-div").addClass('irequire');
-                $("#gradationcompletionyear").removeAttr('disabled');
-            } else {
-                $("#gradationcompletionyear-div").removeClass('irequire');
-                $("#gradationcompletionyear").val('');
-                $("#gradationcompletionyear").attr('disabled', 'disabled');
-            }
-        });
-
-        $('input[name=graduationgpaorpercentage]', '#section_academic').change(function() {
-            if (this.value == 'Percentage') {
-                $('#graduationgpa-div').css('display', 'none');
-                $('#graduationpercentage-div').css('display', 'block');
-            } else if (this.value == 'GPA') {
-                $('#graduationpercentage-div').css('display', 'none');
-                $('#graduationgpa-div').css('display', 'block');
-            }
-        });
-
-        $('input[name=isworkex]', '#section_workex').change(function() {
-            if (this.value == 'Yes') {
-                $('#workex-super-div').css('display', 'block');
-            } else if (this.value == 'No') {
-                $('#workex-super-div').css('display', 'none');
-            }
-        });
-
-        $('#workstarted').datepicker({
-            changeMonth: true,
-            changeYear: true,
-            dateFormat: 'yy-mm-dd',
-            yearRange: '1950:' + currentYear
-        });
-
-        $('#workcompleted').datepicker({
-            changeMonth: true,
-            changeYear: true,
-            dateFormat: 'yy-mm-dd',
-            yearRange: '1950:' + (currentYear + 1)
-        });
-
         $(".modal, .overlay").hide();
 
         $("#save-button-personal").click(function() {
@@ -233,12 +125,8 @@ jQuery.noConflict()(function($) {
             jQuery('#section_contact').ajaxSubmit();
         });
 
-        $("#save-button-academic").click(function() {
-            jQuery('#section_academic').ajaxSubmit();
-        });
-
-        $("#save-button-workex").click(function() {
-            jQuery('#section_workex').ajaxSubmit();
+        $("#save-button-score").click(function() {
+            jQuery('#section_exam_score').ajaxSubmit();
         });
 
         $("#save-button-refree").click(function() {
@@ -328,22 +216,22 @@ jQuery.noConflict()(function($) {
             $("body").scrollTop(0);
         });
 
-        $("#continue-button-academic").click(function() {
-            var section_academic = $('#section_academic');
+        $("#continue-button-score").click(function() {
+            var section_exam_score = $('#section_exam_score');
             var disabled;
-            jQuery('#section_academic').ajaxSubmit({
+            jQuery('#section_exam_score').ajaxSubmit({
                 beforeSubmit: function() {
-                    disabled = section_academic.find(':input:disabled').removeAttr('disabled');
+                    disabled = section_exam_score.find(':input:disabled').removeAttr('disabled');
                 },
                 success: function(responseText, statusText, xhr, $form) {
                     checktimeout(responseText);
                     disabled.attr('disabled', 'disabled');
-                    if ($("#section_academic").valid()) {
-                        academicestatus = true;
+                    if ($("#section_exam_score").valid()) {
+                        examscorestatus = true;
                         $("label[for='sky-tab3']").css('background-color', '#26C281');
                     } else {
                         $("label[for='sky-tab3']").css('background-color', '#F22613');
-                        academicestatus = false;
+                        examscorestatus = false;
                     }
                     $("#sky-tab4").prop("checked", true);
                     $("body").scrollTop(0);
@@ -354,39 +242,8 @@ jQuery.noConflict()(function($) {
 
         });
 
-        $("#back-button-academic").click(function() {
+        $("#back-button-score").click(function() {
             $("#sky-tab2").prop("checked", true);
-            $("body").scrollTop(0);
-        });
-
-        $("#continue-button-workex").click(function() {
-            var section_workex = $('#section_workex');
-            var disabled;
-            jQuery('#section_workex').ajaxSubmit({
-                beforeSubmit: function() {
-                    disabled = section_workex.find(':input:disabled').removeAttr('disabled');
-                },
-                success: function(responseText, statusText, xhr, $form) {
-                    checktimeout(responseText);
-                    disabled.attr('disabled', 'disabled');
-                    if ($("#section_workex").valid()) {
-                        workexstatus = true;
-                        $("label[for='sky-tab4']").css('background-color', '#26C281');
-                    } else {
-                        $("label[for='sky-tab4']").css('background-color', '#F22613');
-                        workexstatus = false;
-                    }
-                    $("#sky-tab5").prop("checked", true);
-                    $("body").scrollTop(0);
-
-                    changeSectionStatus();
-                },
-            });
-
-        });
-
-        $("#back-button-workex").click(function() {
-            $("#sky-tab3").prop("checked", true);
             $("body").scrollTop(0);
         });
 
@@ -399,12 +256,12 @@ jQuery.noConflict()(function($) {
                     checktimeout(responseText);
                     if ($("#section_reference").valid()) {
                         refreestatus = true;
-                        $("label[for='sky-tab5']").css('background-color', '#26C281');
+                        $("label[for='sky-tab4']").css('background-color', '#26C281');
                     } else {
-                        $("label[for='sky-tab5']").css('background-color', '#F22613');
+                        $("label[for='sky-tab4']").css('background-color', '#F22613');
                         refreestatus = false;
                     }
-                    $("#sky-tab6").prop("checked", true);
+                    $("#sky-tab5").prop("checked", true);
                     $("body").scrollTop(0);
 
                     changeSectionStatus();
@@ -413,7 +270,7 @@ jQuery.noConflict()(function($) {
         });
 
         $("#back-button-refree").click(function() {
-            $("#sky-tab4").prop("checked", true);
+            $("#sky-tab3").prop("checked", true);
             $("body").scrollTop(0);
         });
 
@@ -426,12 +283,12 @@ jQuery.noConflict()(function($) {
                     checktimeout(responseText);
                     if ($("#section_additional_info").valid()) {
                         additionalinfostatus = true;
-                        $("label[for='sky-tab6']").css('background-color', '#26C281');
+                        $("label[for='sky-tab5']").css('background-color', '#26C281');
                     } else {
-                        $("label[for='sky-tab6']").css('background-color', '#F22613');
+                        $("label[for='sky-tab5']").css('background-color', '#F22613');
                         additionalinfostatus = false;
                     }
-                    $("#sky-tab7").prop("checked", true);
+                    $("#sky-tab6").prop("checked", true);
                     $("body").scrollTop(0);
 
                     changeSectionStatus();
@@ -440,7 +297,7 @@ jQuery.noConflict()(function($) {
         });
 
         $("#back-button-additional").click(function() {
-            $("#sky-tab5").prop("checked", true);
+            $("#sky-tab4").prop("checked", true);
             $("body").scrollTop(0);
         });
 
@@ -456,10 +313,10 @@ jQuery.noConflict()(function($) {
                     $.unblockUI();
 
                     if ($("#section_docs").valid()) {
-                        $("label[for='sky-tab7']").css('background-color', '#26C281');
+                        $("label[for='sky-tab6']").css('background-color', '#26C281');
                         docstatus = true;
                     } else {
-                        $("label[for='sky-tab7']").css('background-color', '#F22613');
+                        $("label[for='sky-tab6']").css('background-color', '#F22613');
                         docstatus = false;
                     }
 
@@ -471,7 +328,7 @@ jQuery.noConflict()(function($) {
                             animation: false
                         });
 
-                        $("label[for='sky-tab7']").css('background-color', '#F22613');
+                        $("label[for='sky-tab6']").css('background-color', '#F22613');
                         docstatus = false;
                     } else if (response.status === 'P') {
                         /*swal({
@@ -498,39 +355,31 @@ jQuery.noConflict()(function($) {
                         contactstatus = false;
                     }
 
-                    if ($("#section_academic").valid()) {
+                    if ($("#section_exam_score").valid()) {
                         $("label[for='sky-tab3']").css('background-color', '#26C281');
-                        academicestatus = true;
+                        examscorestatus = true;
                     } else {
                         $("label[for='sky-tab3']").css('background-color', '#F22613');
-                        academicestatus = false;
-                    }
-
-                    if ($("#section_workex").valid()) {
-                        $("label[for='sky-tab4']").css('background-color', '#26C281');
-                        workexstatus = true;
-                    } else {
-                        $("label[for='sky-tab4']").css('background-color', '#F22613');
-                        workexstatus = false;
+                        examscorestatus = false;
                     }
 
                     if ($("#section_reference").valid()) {
-                        $("label[for='sky-tab5']").css('background-color', '#26C281');
+                        $("label[for='sky-tab4']").css('background-color', '#26C281');
                         refreestatus = true;
                     } else {
-                        $("label[for='sky-tab5']").css('background-color', '#F22613');
+                        $("label[for='sky-tab4']").css('background-color', '#F22613');
                         refreestatus = false;
                     }
 
                     if ($("#section_additional_info").valid()) {
-                        $("label[for='sky-tab6']").css('background-color', '#26C281');
+                        $("label[for='sky-tab5']").css('background-color', '#26C281');
                         additionalinfostatus = true;
                     } else {
-                        $("label[for='sky-tab6']").css('background-color', '#F22613');
+                        $("label[for='sky-tab5']").css('background-color', '#F22613');
                         additionalinfostatus = false;
                     }
 
-                    if (personalstatus && contactstatus && academicestatus && workexstatus && refreestatus && additionalinfostatus && docstatus) {
+                    if (personalstatus && contactstatus && examscorestatus && refreestatus && additionalinfostatus && docstatus) {
                         isApplicationValid = true;
                         if (response.status === 'P') {
                             window.location = response.msg + "admin/agreement.php";
@@ -556,7 +405,7 @@ jQuery.noConflict()(function($) {
         });
 
         $("#back-button-doc").click(function() {
-            $("#sky-tab6").prop("checked", true);
+            $("#sky-tab5").prop("checked", true);
             $("body").scrollTop(0);
         });
 
@@ -601,83 +450,59 @@ jQuery.noConflict()(function($) {
                             $('#section_contact').loadJSON(applicantdata[2]);
                         }
                         if (isValid(applicantdata[3])) {
-                            if (applicantdata[3].extraacademiccount > 0) {
-                                $('#section_academic .toclone').css('display', 'block');
-                                $('#extraacademiccount').val('1');
-                                $("#add-extra-academic").css('display', 'none');
-                            }
-                            for (var i = 0; i < applicantdata[3].extraacademiccount - 1; i++) {
-                                $('#academic-clone').triggerHandler('clone_clone', [$('#academic-clone .clone:first')]);
-                            }
-                            setTimeout(function() {
-                                $('#section_academic').loadJSON(applicantdata[3]);
-                            }, 1000);
+                            $('#section_exam_score').loadJSON(applicantdata[3]);
                         }
                         if (isValid(applicantdata[4])) {
-                            for (var i = 0; i < applicantdata[4].extraworkexcount; i++) {
-                                $('#workex-clone').triggerHandler('clone_clone', [$('#workex-clone .clone:first')]);
-                            }
-                            setTimeout(function() {
-                                $('#section_workex').loadJSON(applicantdata[4]);
-                            }, 1000);
+                            $('#section_reference').loadJSON(applicantdata[4]);
                         }
                         if (isValid(applicantdata[5])) {
-                            $('#section_reference').loadJSON(applicantdata[5]);
+                            $('#section_additional_info').loadJSON(applicantdata[5]);
                         }
                         if (isValid(applicantdata[6])) {
-                            $('#section_additional_info').loadJSON(applicantdata[6]);
-                        }
-                        if (isValid(applicantdata[7])) {
-                            $('#section_docs').loadJSON(applicantdata[7]);
+                            $('#section_docs').loadJSON(applicantdata[6]);
                         }
 
-                        if (isValid(applicantdata[8])) {
-                            if (applicantdata[8].personalstatus == 'true') {
+                        if (isValid(applicantdata[7])) {
+                            if (applicantdata[7].personalstatus == 'true') {
                                 personalstatus = true;
                                 $("label[for='sky-tab1']").css('background-color', '#26C281');
                             } else {
                                 $("label[for='sky-tab1']").css('background-color', '#F22613');
                             }
-                            if (applicantdata[8].contactstatus == 'true') {
+                            if (applicantdata[7].contactstatus == 'true') {
                                 contactstatus = true;
                                 $("label[for='sky-tab2']").css('background-color', '#26C281');
                             } else {
                                 $("label[for='sky-tab2']").css('background-color', '#F22613');
                             }
-                            if (applicantdata[8].academicestatus == 'true') {
-                                academicestatus = true;
+                            if (applicantdata[7].examscorestatus == 'true') {
+                                examscorestatus = true;
                                 $("label[for='sky-tab3']").css('background-color', '#26C281');
                             } else {
                                 $("label[for='sky-tab3']").css('background-color', '#F22613');
                             }
-                            if (applicantdata[8].workexstatus == 'true') {
-                                workexstatus = true;
+                            if (applicantdata[7].refreestatus == 'true') {
+                                refreestatus = true;
                                 $("label[for='sky-tab4']").css('background-color', '#26C281');
                             } else {
                                 $("label[for='sky-tab4']").css('background-color', '#F22613');
                             }
-                            if (applicantdata[8].refreestatus == 'true') {
-                                refreestatus = true;
+                            if (applicantdata[7].additionalinfostatus == 'true') {
+                                additionalinfostatus = true;
                                 $("label[for='sky-tab5']").css('background-color', '#26C281');
                             } else {
                                 $("label[for='sky-tab5']").css('background-color', '#F22613');
                             }
-                            if (applicantdata[8].additionalinfostatus == 'true') {
-                                additionalinfostatus = true;
+                            if (applicantdata[7].docstatus == 'true') {
+                                docstatus = true;
                                 $("label[for='sky-tab6']").css('background-color', '#26C281');
                             } else {
                                 $("label[for='sky-tab6']").css('background-color', '#F22613');
                             }
-                            if (applicantdata[8].docstatus == 'true') {
-                                docstatus = true;
-                                $("label[for='sky-tab7']").css('background-color', '#26C281');
-                            } else {
-                                $("label[for='sky-tab7']").css('background-color', '#F22613');
-                            }
                         }
                     }
 
-                    if (personalstatus && contactstatus && academicestatus && workexstatus && refreestatus && additionalinfostatus && docstatus) {
+                    if (personalstatus && contactstatus && examscorestatus && refreestatus && additionalinfostatus && docstatus) {
                         window.location = baseurl + "admin/agreement.php";
                     } else {
 
@@ -701,8 +526,7 @@ jQuery.noConflict()(function($) {
                 data: {
                     personalstatus: personalstatus,
                     contactstatus: contactstatus,
-                    academicestatus: academicestatus,
-                    workexstatus: workexstatus,
+                    examscorestatus: examscorestatus,
                     refreestatus: refreestatus,
                     additionalinfostatus: additionalinfostatus,
                     docstatus: docstatus

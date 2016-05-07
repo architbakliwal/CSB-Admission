@@ -49,7 +49,8 @@ $lastname = strip_tags( trim( $_POST["lastname"] ) );
 $dob = strip_tags( trim( $_POST["dob"] ) );
 $gender = strip_tags( trim( $_POST["gender"] ) );
 $bloodgrp = strip_tags( trim( $_POST["bloodgrp"] ) );
-$hearaboutvs = strip_tags( trim( $_POST["hearaboutvs"] ) );
+$hearaboutcsb = strip_tags( trim( $_POST["hearaboutcsb"] ) );
+$hearaboutcsbother = strip_tags( trim( $_POST["hearaboutcsbother"] ) );
 
 
 $finalapplicationid = htmlspecialchars( $applicationid, ENT_QUOTES, 'UTF-8' );
@@ -59,7 +60,8 @@ $finallastname = htmlspecialchars( $lastname, ENT_QUOTES, 'UTF-8' );
 $finaldob = htmlspecialchars( $dob, ENT_QUOTES, 'UTF-8' );
 $finalgender = htmlspecialchars( $gender, ENT_QUOTES, 'UTF-8' );
 $finalbloodgrp = htmlspecialchars( $bloodgrp, ENT_QUOTES, 'UTF-8' );
-$finalhearaboutvs = htmlspecialchars( $hearaboutvs, ENT_QUOTES, 'UTF-8' );
+$finalhearaboutcsb = htmlspecialchars( $hearaboutcsb, ENT_QUOTES, 'UTF-8' );
+$finalhearaboutcsbother = htmlspecialchars( $hearaboutcsbother, ENT_QUOTES, 'UTF-8' );
 
 if ( $finaldob ) {
 	$c= date( 'Y' );
@@ -72,7 +74,7 @@ if ( $finaldob ) {
 
 
 if ( $mysql == true ) {
-	$sqlpersonal = "INSERT INTO `csbedu_admission`.`users_personal_details` (`application_id`, `f_name`, `m_name`, `l_name`,`user_dob`, `age`, `gender`, `blood_group`, `hear_abt_csb`) VALUES ('".mysql_real_escape_string( $finalapplicationid )."','".mysql_real_escape_string( $finalfirstname )."','".mysql_real_escape_string( $finalmiddlename )."','".mysql_real_escape_string( $finallastname )."','".mysql_real_escape_string( $finaldob )."','".mysql_real_escape_string( $finalage )."','".mysql_real_escape_string( $finalgender )."','".mysql_real_escape_string( $finalbloodgrp )."','".mysql_real_escape_string( $finalhearaboutvs )."')
+	$sqlpersonal = "INSERT INTO `csbedu_admission`.`users_personal_details` (`application_id`, `f_name`, `m_name`, `l_name`,`user_dob`, `age`, `gender`, `blood_group`, `hear_abt_csb`, `hear_abt_csb_others`) VALUES ('".mysql_real_escape_string( $finalapplicationid )."','".mysql_real_escape_string( $finalfirstname )."','".mysql_real_escape_string( $finalmiddlename )."','".mysql_real_escape_string( $finallastname )."','".mysql_real_escape_string( $finaldob )."','".mysql_real_escape_string( $finalage )."','".mysql_real_escape_string( $finalgender )."','".mysql_real_escape_string( $finalbloodgrp )."','".mysql_real_escape_string( $finalhearaboutcsb )."','".mysql_real_escape_string( $finalhearaboutcsbother )."')
 		ON DUPLICATE KEY
 		UPDATE
 		f_name = VALUES(f_name),
@@ -82,7 +84,8 @@ if ( $mysql == true ) {
 		age = VALUES(age),
 		gender = VALUES(gender),
 		blood_group = VALUES(blood_group),
-		hear_abt_csb = VALUES(hear_abt_csb)
+		hear_abt_csb = VALUES(hear_abt_csb),
+		hear_abt_csb_others = VALUES(hear_abt_csb_others)
 		;";
 
 	$insertpersonal = mysql_query( $sqlpersonal );

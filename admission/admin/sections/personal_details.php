@@ -78,24 +78,27 @@
 								</label>
 						    </div>
 						</div>
-						<div class="column-twelve">
+						<div class="column-six">
 							<div class="select-group irequire">
-								<label for="hearaboutvs" class="group custom-select">
-									<select id="hearaboutvs" name="hearaboutvs" class="select">
-									    <option value="">How did you hear of CSB?</option>
-									    <option value="Newspaper articles">Newspaper articles</option>
-										<option value="Social Media">Social Media</option>
-										<option value="Friend">Friend</option>
-										<option value="Parent">Parent</option>
-										<option value="College">College</option>
-										<option value="Through an alum">Through an alum</option>
-										<option value="Campus Presentations">Campus Presentations</option>
-										<option value="Campus Ambassadors">Campus Ambassadors</option>
-										<option value="YIF Alum">YIF Alum</option>
+								<label for="hearaboutcsb" class="group custom-select">
+									<select id="hearaboutcsb" name="hearaboutcsb" class="select">
+									    <option value="Email">Email</option>
+									    <option value="Social media">Social media - Please specify the platform</option>
+									    <option value="Newspaper">Newspaper - Please specify which newspaper</option>
+									    <option value="Friend">Friend</option>
+									    <option value="College Alumni Network">College Alumni Network</option>
+									    <option value="Others">Other - Please specify</option>
 									</select>
 								</label>
 					        </div>
 					    </div>
+					    <div class="column-six">
+							<div class="input-group-right">
+								<label for="hearaboutcsbother" class="group label-input">
+	                                <input type="text" id="hearaboutcsbother" name="hearaboutcsbother" class="input-right" placeholder="Please Specify">
+								</label>
+						    </div>
+						</div>
 						<div class="column-two">
 							<button type="button" id="save-button-personal" class="button button-large button-blue">Save</button>
 						</div>

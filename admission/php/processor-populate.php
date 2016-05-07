@@ -83,7 +83,8 @@ if ( isset( $_GET['lang'] ) and array_key_exists( $_GET['lang'], $language ) ) {
 			$row_array['dob'] = $row['user_dob'];
 			$row_array['gender'] = $row['gender'];
 			$row_array['bloodgrp'] = $row['blood_group'];
-			$row_array['hearaboutvs'] = $row['hear_abt_csb'];
+			$row_array['hearaboutcsb'] = $row['hear_abt_csb'];
+			$row_array['hearaboutcsbother'] = $row['hear_abt_csb_others'];
 	        
 	    }
 

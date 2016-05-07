@@ -90,6 +90,10 @@ if ( !$_SESSION['userLogin'] && !$_SESSION['userName'] && !isset( $_SESSION['use
 			</div>
 			<div class="section">
 				<div class="grid-container">
+					<div class="column-twelve">
+						<div style="display:block"><div class="legend-error" style="background:rgb(242, 38, 19)"></div>Section Incomplete</div>
+						<div style="display:block"><div class="legend-error" style="background:rgb(38, 194, 129)"></div>Section Complete</div>
+					</div>
 					<!-- tabs -->
 					<div class="sky-tabs sky-tabs-pos-top-center sky-tabs-response-to-icons">
 						<input type="radio" name="sky-tabs" checked id="sky-tab1" class="sky-tab-content-1">

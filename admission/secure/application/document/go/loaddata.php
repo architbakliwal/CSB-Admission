@@ -60,6 +60,7 @@
 		$m_name = $row['m_name'];
 		$application_id = $row['application_id'];
 		$email_id = $row['email_id'];
+		$mobile_number = $row['mobile_number'];
 		$application_status = $row['application_status'];
     }
 
@@ -105,7 +106,7 @@
 
     while ($row = mysql_fetch_array($selectcontact, MYSQL_ASSOC)) {
         $email_id = $row['email_id'];
-		$mobile_number = $row['mobile_number'];
+		// $mobile_number = $row['mobile_number'];
 		$phone_number = $row['phone_number'];
 		$current_address_line1 = $row['current_address_line1'];
 		$current_address_line2 = $row['current_address_line2'];

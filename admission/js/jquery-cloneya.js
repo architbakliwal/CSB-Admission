@@ -197,6 +197,12 @@
         elem.on('clone_after_delete', function(event) {
             // get the count of all the clones
             var cloneCount = elem.find(config.cloneThis).length;
+            if(elem.attr('id') == 'academic-clone') {
+                $('#extraacademiccount').val(cloneCount-1);
+
+            } else if(elem.attr('id') == 'workex-clone') {
+                $('#extraworkexcount').val(cloneCount-1);
+            }
 
         });
 
@@ -204,6 +210,12 @@
 
             // get the count of all the clones
             var cloneCount = elem.find(config.cloneThis).length;
+            if(elem.attr('id') == 'academic-clone') {
+                $('#extraacademiccount').val(cloneCount-1);
+
+            } else if(elem.attr('id') == 'workex-clone') {
+                $('#extraworkexcount').val(cloneCount-1);
+            }
 
             $('input', document).each(function(index, element) {
                 $(this).attr('title', $(this).attr('placeholder'));

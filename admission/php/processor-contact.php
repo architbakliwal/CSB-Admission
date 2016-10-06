@@ -101,7 +101,7 @@ $finalparentqualification = htmlspecialchars( $parentqualification, ENT_QUOTES, 
 
 
 if ( $mysql == true ) {
-	$sqlcontact = "INSERT INTO `csbedu_admission`.`users_contact_details` (`application_id`, `email_id`, `mobile_number`, `phone_number`, `current_address_line1`, `current_address_line2`, `current_address_line3`, `current_address_city`, `current_address_state`, `current_address_state_other`, `current_address_country`, `current_address_pin`, `permanent_same_as_current_address`, `permanent_address_line1`, `permanent_address_line2`, `permanent_address_line3`, `permanent_address_city`, `permanent_address_state`, `permanent_address_state_other`, `permanent_address_country`, `permanent_address_pin`, `parent_name`, `parent_mobile`, `parent_relation`, `parent_organisation`, `parent_designation`, `parent_qualification`) VALUES (
+	$sqlcontact = "INSERT INTO `csbedu_admission_2017`.`users_contact_details` (`application_id`, `email_id`, `mobile_number`, `phone_number`, `current_address_line1`, `current_address_line2`, `current_address_line3`, `current_address_city`, `current_address_state`, `current_address_state_other`, `current_address_country`, `current_address_pin`, `permanent_same_as_current_address`, `permanent_address_line1`, `permanent_address_line2`, `permanent_address_line3`, `permanent_address_city`, `permanent_address_state`, `permanent_address_state_other`, `permanent_address_country`, `permanent_address_pin`, `parent_name`, `parent_mobile`, `parent_relation`, `parent_organisation`, `parent_designation`, `parent_qualification`) VALUES (
 			'".mysql_real_escape_string( $finalapplicationid )."',
 			'".mysql_real_escape_string( $finalemail )."',
 			'".mysql_real_escape_string( $finalmobilenumber )."',

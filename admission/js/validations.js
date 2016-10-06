@@ -7,6 +7,9 @@ jQuery.noConflict()(function($) {
         $("input[name=mobilenumber]").ForceNumericOnly();
         $("input[name=phonenumber]").ForceNumericOnly();
         $("input[name=emergencymobile]").ForceNumericOnly();
+        $("input[name=ctc]").ForceNumericOnly();
+        $("input[name=totalworkex]").ForceNumericOnly();
+        $("input[name=noticeperiod]").ForceNumericOnly();
         $("input[name=refreecontact]").ForceNumericOnly();
 
 
@@ -14,7 +17,7 @@ jQuery.noConflict()(function($) {
         $("input[name=middlename]").ForceAlphabestOnly();
         $("input[name=refreename]").ForceAlphabestOnly();
 
-        $("#examscore, #refreeknowing, #aftermbaplan").on('keyup', function() {
+        $("#academicachivements, #rolesandresponsibility, #examscore, #refreeknowing, #difficult_decision, #future_plans").on('keyup', function() {
             var words = this.value.match(/\S+/g).length;
             if (words > 200) {
                 // Split the string on first 200 words and rejoin on spaces
@@ -86,6 +89,60 @@ jQuery.noConflict()(function($) {
 
         // the following method must come AFTER .validate()
         $('#section_contact .itrequired').each(function() {
+            $(this).rules('add', {
+                required: true,
+            });
+        });
+
+        $("#section_academic").validate({
+
+            rules: {},
+            messages: {},
+
+            errorPlacement: function(error, element) {
+                $(element).tooltipster('update', $(error).text());
+            },
+            success: function(label, element) {
+
+            },
+            submitHandler: function(form) {
+
+            }
+        });
+
+        // the following method must come AFTER .validate()
+        $('#section_academic .itrequired').each(function() {
+            $(this).rules('add', {
+                required: true,
+            });
+        });
+
+        $("#section_workex").validate({
+
+            rules: {
+                workstarted: {
+                    required: true,
+                    dpDate: true
+                },
+                workcompleted: {
+                    required: true,
+                    dpDate: true
+                }
+            },
+
+            errorPlacement: function(error, element) {
+                $(element).tooltipster('update', $(error).text());
+            },
+            success: function(label, element) {
+
+            },
+            submitHandler: function(form) {
+
+            }
+        });
+
+        // the following method must come AFTER .validate()
+        $('#section_workex .itrequired').each(function() {
             $(this).rules('add', {
                 required: true,
             });

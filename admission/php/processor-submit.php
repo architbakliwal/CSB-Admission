@@ -46,7 +46,7 @@ $applicationid = strip_tags( trim( $_SESSION['userName'] ) );
 
 
 if ( $mysql == true ) {
-	$sqlsubmit = "UPDATE  `csbedu_admission`.`admission_users` SET `application_status` = 'Completed' WHERE application_id ='" . $applicationid ."'";
+	$sqlsubmit = "UPDATE  `csbedu_admission_2017`.`admission_users` SET `application_status` = 'Completed' WHERE application_id ='" . $applicationid ."'";
 
 	$updatesubmit = mysql_query( $sqlsubmit );
 

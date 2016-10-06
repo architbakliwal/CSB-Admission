@@ -6,7 +6,7 @@
 
 	if($_SERVER['SERVER_ADDR'] == '127.0.0.1') {
 		$hostname_Connection = "127.0.0.1";
-	    $database_Connection = "csbedu_admission";
+	    $database_Connection = "csbedu_admission_2017";
 	    $username_Connection = "root";
 	    $password_Connection = "";
 	    $baseurl = 'http://127.0.0.1/CSBAdmission/';
@@ -14,9 +14,9 @@
 	} else {
 		//Settings for production
 		$hostname_Connection = "localhost";
-	    $database_Connection = "csbedu_admission";
+	    $database_Connection = "csbedu_admission_2017";
 	    $username_Connection = "csbedu_admission";
-	    $password_Connection = "VCSHwQfyQd";
+	    $password_Connection = "Fg(R2vTts183";
 	    $physicalpath = "/home/csbedu/public_html/";
 
 	    // Enter your URL here without http:// only domain!
@@ -79,7 +79,7 @@
 	
 	// Add here your password salt before add members to your website
 	// You can go here to generate a good salt http://randomkeygen.com/
-	$passwordsalt = '8q3Oz44cLT';
+	$passwordsalt = 'y4md5cL7iF';
 	
 	// Remote IP Address!
 	$finaluserip = $_SERVER['REMOTE_ADDR'];

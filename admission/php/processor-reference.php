@@ -65,7 +65,7 @@ $finalrefreeknowing = htmlspecialchars( $refreeknowing, ENT_QUOTES, 'UTF-8' );
 
 
 if ( $mysql == true ) {
-	$sqlrefree = "INSERT INTO `csbedu_admission`.`users_reference_details` (`application_id`, `title_of_refree`, `name_of_refree`, `organization`, `designation`, `phone_number`, `email_id`, `capacity_of_knowing`) VALUES (
+	$sqlrefree = "INSERT INTO `csbedu_admission_2017`.`users_reference_details` (`application_id`, `title_of_refree`, `name_of_refree`, `organization`, `designation`, `phone_number`, `email_id`, `capacity_of_knowing`) VALUES (
 			'".mysql_real_escape_string( $finalapplicationid )."',
 			'".mysql_real_escape_string( $finalrefreetitle )."',
 			'".mysql_real_escape_string( $finalrefreename )."',

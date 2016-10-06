@@ -53,7 +53,7 @@ $docstatus = strip_tags( trim( $_POST["docstatus"] ) );
 $datetime = date( "Y-m-d H:i:s" );
 
 if ( $mysql == true ) {
-	$sqlstatus = "INSERT INTO `csbedu_admission`.`admission_section_status` (`application_id`, `personal_details_status`, `contact_details_status`, `exam_score_details_status`, `reference_details_status`, `additional_details_status`, `document_details_status`, `last_update_date`) VALUES (
+	$sqlstatus = "INSERT INTO `csbedu_admission_2017`.`admission_section_status` (`application_id`, `personal_details_status`, `contact_details_status`, `exam_score_details_status`, `reference_details_status`, `additional_details_status`, `document_details_status`, `last_update_date`) VALUES (
 			'".$applicationid."',
 			'".$personalstatus."',
 			'".$contactstatus."',

@@ -41,7 +41,7 @@
 								</label>
 						    </div>
 						</div>
-						<div class="column-four">
+						<div class="column-six">
 							<div class="input-group-right irequire">
 							    <label for="dob" class="group label-input">
 								    <i class="icon-calendar"></i>
@@ -49,7 +49,7 @@
 								</label>
 						    </div>
 						</div>
-						<div class="column-four">
+						<div class="column-six">
 							<div class="select-group irequire">
 								<label for="gender" class="group custom-select">
 									<select id="gender" name="gender" class="select">
@@ -60,23 +60,6 @@
 									</select>
 								</label>
 					        </div>
-						</div>
-						<div class="column-four">
-							<div class="select-group irequire">
-								<label for="bloodgrp" class="group custom-select">
-	                                <select id="bloodgrp" name="bloodgrp" class="select">
-									    <option value="">Blood Group</option>
-										<option value="O-">O-</option>
-										<option value="O+">O+</option>
-										<option value="A-">A-</option>
-										<option value="A+">A+</option>
-										<option value="B-">B-</option>
-										<option value="B+">B+</option>
-										<option value="AB-">AB-</option>
-										<option value="AB+">AB+</option>
-									</select>
-								</label>
-						    </div>
 						</div>
 						<div class="column-six">
 							<div class="select-group irequire">

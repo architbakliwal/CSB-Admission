@@ -49,7 +49,7 @@ $finalapplicationid = htmlspecialchars( $applicationid, ENT_QUOTES, 'UTF-8' );
 $finalaftermbaplan = htmlspecialchars( $aftermbaplan, ENT_QUOTES, 'UTF-8' );
 
 if ( $mysql == true ) {
-	$sqladditionalinfo = "INSERT INTO `csbedu_admission`.`user_additional_info` (`application_id`, `after_mba_plan`) VALUES ('".mysql_real_escape_string( $finalapplicationid )."','".mysql_real_escape_string( $finalaftermbaplan )."')
+	$sqladditionalinfo = "INSERT INTO `csbedu_admission_2017`.`user_additional_info` (`application_id`, `after_mba_plan`) VALUES ('".mysql_real_escape_string( $finalapplicationid )."','".mysql_real_escape_string( $finalaftermbaplan )."')
 		ON DUPLICATE KEY
 		UPDATE
 		after_mba_plan = VALUES(after_mba_plan)

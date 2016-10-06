@@ -42,12 +42,12 @@ if($_SERVER['SERVER_ADDR'] == '127.0.0.1') {
 } else {
 	// settings for production
 	$db['default']['username'] = "csbedu_admission";
-	$db['default']['password'] = "VCSHwQfyQd";
+	$db['default']['password'] = "Fg(R2vTts183";
 	$db['default']['hostname'] = "localhost";
 }
 
 // The following values can probably stay the same.
-$db['default']['database'] = "csbedu_admission";
+$db['default']['database'] = "csbedu_admission_2017";
 $db['default']['dbdriver'] = "mysqli";
 $db['default']['dbprefix'] = "";
 $db['default']['pconnect'] = TRUE;

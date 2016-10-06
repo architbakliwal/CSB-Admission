@@ -49,7 +49,7 @@ $finalapplicationid = htmlspecialchars( $applicationid, ENT_QUOTES, 'UTF-8' );
 $finalexamscore = htmlspecialchars( $examscore, ENT_QUOTES, 'UTF-8' );
 
 if ( $mysql == true ) {
-	$sqladditionalinfo = "INSERT INTO `csbedu_admission`.`user_exam_score` (`application_id`, `exam_score`) VALUES ('".mysql_real_escape_string( $finalapplicationid )."','".mysql_real_escape_string( $finalexamscore )."')
+	$sqladditionalinfo = "INSERT INTO `csbedu_admission_2017`.`user_exam_score` (`application_id`, `exam_score`) VALUES ('".mysql_real_escape_string( $finalapplicationid )."','".mysql_real_escape_string( $finalexamscore )."')
 		ON DUPLICATE KEY
 		UPDATE
 		exam_score = VALUES(exam_score)

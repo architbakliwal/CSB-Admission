@@ -25,8 +25,15 @@
 								<div class="box-section center">
 								    <div class="column-twelve">
 										<div class="textarea-group irequire">
-										    <label for="aftermbaplan" class="group label-textarea">
-				                                <textarea rows="5" id="aftermbaplan" name="aftermbaplan" class="textarea resisable" placeholder="What do you plan to do after your MBA. (Max 200 words)"></textarea>
+										    <label for="difficult_decision" class="group label-textarea">
+				                                <textarea rows="5" id="difficult_decision" name="difficult_decision" class="textarea resisable" placeholder="Describe a difficult decision you have made and why it was challenging."></textarea>
+											</label>
+									    </div>
+									</div>
+									<div class="column-twelve">
+										<div class="textarea-group irequire">
+										    <label for="future_plans" class="group label-textarea">
+				                                <textarea rows="5" id="future_plans" name="future_plans" class="textarea resisable" placeholder="Tell us about your path to business school and your future plans. How will an MBA help you along this journey?"></textarea>
 											</label>
 									    </div>
 									</div>

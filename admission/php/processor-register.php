@@ -80,7 +80,7 @@ if ( $SMTP == true ) {
 			$insertactivation = mysql_query( $sqlactivation );
 
 
-			$sqlpersonal = "INSERT INTO `csbedu_admission`.`users_personal_details` (`application_id`, `f_name`, `m_name`, `l_name`) VALUES ('".mysql_real_escape_string( $finalusername )."','".mysql_real_escape_string( $finalfirstname )."','".mysql_real_escape_string( $finalmiddlename )."','".mysql_real_escape_string( $finallastname )."')
+			$sqlpersonal = "INSERT INTO `csbedu_admission_2017`.`users_personal_details` (`application_id`, `f_name`, `m_name`, `l_name`) VALUES ('".mysql_real_escape_string( $finalusername )."','".mysql_real_escape_string( $finalfirstname )."','".mysql_real_escape_string( $finalmiddlename )."','".mysql_real_escape_string( $finallastname )."')
 						ON DUPLICATE KEY
 						UPDATE
 						f_name = VALUES(f_name),
@@ -91,7 +91,7 @@ if ( $SMTP == true ) {
 			$insertpersonal = mysql_query( $sqlpersonal );
 
 
-			$sqlcontact = "INSERT INTO `csbedu_admission`.`users_contact_details` (`application_id`, `email_id`, `mobile_number`) VALUES (
+			$sqlcontact = "INSERT INTO `csbedu_admission_2017`.`users_contact_details` (`application_id`, `email_id`, `mobile_number`) VALUES (
 					'".mysql_real_escape_string( $finalusername )."',
 					'".mysql_real_escape_string( $finaluseremail )."',
 					'".mysql_real_escape_string( $finalmobile )."'

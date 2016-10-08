@@ -65,6 +65,7 @@
 							<div class="select-group irequire">
 								<label for="hearaboutcsb" class="group custom-select">
 									<select id="hearaboutcsb" name="hearaboutcsb" class="select">
+										<option value="">How did you hear of CSB?</option>
 									    <option value="Email">Email</option>
 									    <option value="Social media">Social media - Please specify the platform</option>
 									    <option value="Newspaper">Newspaper - Please specify which newspaper</option>

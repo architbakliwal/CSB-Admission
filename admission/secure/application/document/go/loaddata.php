@@ -43,8 +43,8 @@
 	$finalapplicationid = htmlspecialchars($applicationid, ENT_QUOTES, 'UTF-8');
 	
 
-	$extra_acads = array();
-	$extra_workex = array();
+	$acads = array();
+	$workex = array();
 
     $userInfo = "SELECT * FROM  `admission_users` WHERE application_id ='" . $finalapplicationid ."'";
 
@@ -90,7 +90,6 @@
 		}
 		$age = $row['age'];
 		$gender = $row['gender'];
-		$blood_grp = $row['blood_group'];
 		$hear_abt_csb = $row['hear_abt_csb'];
 		$hear_abt_csb_others = $row['hear_abt_csb_others'];
     }
@@ -132,6 +131,41 @@
 		$parent_designation = $row['parent_designation' ];
 		$parent_qualification = $row['parent_qualification' ];
     }
+
+	$academic = "SELECT * FROM  `users_academic_details` WHERE application_id ='" . $finalapplicationid ."' ORDER BY uid";
+
+	$selectacademic = mysql_query($academic);
+
+	if ( ! $selectacademic ) {
+	  die('Could not enter data: ' . mysql_error());
+	}
+
+	$y = '';
+	$x = 1;
+
+    while ($row = mysql_fetch_array($selectacademic, MYSQL_ASSOC)) {
+    	$iqualification = "qualification{$y}";
+		$iinstitute = "institute{$y}";
+		$iboard = "board{$y}";
+		$iyearofpassing = "yearofpassing{$y}";
+		$iaggregate = "aggregate{$y}";
+		$iacademicachivements = "academicachivements{$y}";
+		$iextraacademiccount = "extraacademiccount{$y}";
+
+		$acads[$iqualification] = $row['qualification'];
+		$acads[$iinstitute] = $row['institute'];
+		$acads[$iboard] = $row['board'];
+		$acads[$iyearofpassing] = $row['year_of_passing'];
+		$acads[$iaggregate] = $row['aggregate'];
+		$acads[$iacademicachivements] = $row['academic_achivements'];
+		$acads[$iextraacademiccount] = $row['extra_academic_added_count'];
+		$extra_academic_added_count = $row['extra_academic_added_count'];
+
+		$y = $x;
+
+		$x = $x + 1;
+    }
+
 
     $sqlexamscore = "SELECT * FROM  `user_exam_score` WHERE application_id ='" . $finalapplicationid ."'";
 

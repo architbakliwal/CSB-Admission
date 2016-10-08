@@ -45,6 +45,8 @@ if ( strlen( trim( $_SESSION['userName'] ) ) == 0 ) {
 $applicationid = strip_tags( trim( $_SESSION['userName'] ) );
 $personalstatus = strip_tags( trim( $_POST["personalstatus"] ) );
 $contactstatus = strip_tags( trim( $_POST["contactstatus"] ) );
+$academicestatus = strip_tags( trim( $_POST["academicestatus"] ) );
+$workexstatus = strip_tags( trim( $_POST["workexstatus"] ) );
 $examscorestatus = strip_tags( trim( $_POST["examscorestatus"] ) );
 $refreestatus = strip_tags( trim( $_POST["refreestatus"] ) );
 $additionalinfostatus = strip_tags( trim( $_POST["additionalinfostatus"] ) );
@@ -53,10 +55,12 @@ $docstatus = strip_tags( trim( $_POST["docstatus"] ) );
 $datetime = date( "Y-m-d H:i:s" );
 
 if ( $mysql == true ) {
-	$sqlstatus = "INSERT INTO `csbedu_admission_2017`.`admission_section_status` (`application_id`, `personal_details_status`, `contact_details_status`, `exam_score_details_status`, `reference_details_status`, `additional_details_status`, `document_details_status`, `last_update_date`) VALUES (
+	$sqlstatus = "INSERT INTO `csbedu_admission_2017`.`admission_section_status` (`application_id`, `personal_details_status`, `contact_details_status`, `academic_details_status`, `work_ex_details_status`, `exam_score_details_status`, `reference_details_status`, `additional_details_status`, `document_details_status`, `last_update_date`) VALUES (
 			'".$applicationid."',
 			'".$personalstatus."',
 			'".$contactstatus."',
+			'".$academicestatus."',
+			'".$workexstatus."',
 			'".$examscorestatus."',
 			'".$refreestatus."',
 			'".$additionalinfostatus."',
@@ -67,6 +71,8 @@ if ( $mysql == true ) {
 		UPDATE
 		personal_details_status = VALUES(personal_details_status),
 		contact_details_status = VALUES(contact_details_status),
+		academic_details_status = VALUES(academic_details_status),
+		work_ex_details_status = VALUES(work_ex_details_status),
 		exam_score_details_status = VALUES(exam_score_details_status),
 		reference_details_status = VALUES(reference_details_status),
 		additional_details_status = VALUES(additional_details_status),

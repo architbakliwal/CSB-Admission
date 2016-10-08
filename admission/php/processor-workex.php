@@ -44,35 +44,31 @@ if ( strlen( trim( $_SESSION['userName'] ) ) == 0 ) {
 
 $applicationid = strip_tags( trim( $_SESSION['userName'] ) );
 $isworkex = strip_tags( trim( $_POST['isworkex'] ) );
-$employementtype = strip_tags( trim( $_POST['employementtype'] ) );
 $organizationname = strip_tags( trim( $_POST['organizationname'] ) );
-$organizationtype = strip_tags( trim( $_POST['organizationtype'] ) );
-$organizationtypeother = strip_tags( trim( $_POST['organizationtypeother'] ) );
+$location = strip_tags( trim( $_POST['location'] ) );
+$designation = strip_tags( trim( $_POST['designation'] ) );
 $workstarted = strip_tags( trim( $_POST['workstarted'] ) );
 $workcompleted = strip_tags( trim( $_POST['workcompleted'] ) );
-$comapnyjoinedas = strip_tags( trim( $_POST['comapnyjoinedas'] ) );
-$currentdesignation = strip_tags( trim( $_POST['currentdesignation'] ) );
-$annualrenumeration = strip_tags( trim( $_POST['annualrenumeration'] ) );
+$ctc = strip_tags( trim( $_POST['ctc'] ) );
 $rolesandresponsibility = strip_tags( trim( $_POST['rolesandresponsibility'] ) );
 $extraworkexcount = strip_tags( trim( $_POST['extraworkexcount'] ) );
 $totalworkex = strip_tags( trim( $_POST['totalworkex'] ) );
+$noticeperiod = strip_tags( trim( $_POST['noticeperiod'] ) );
 
 
 
 $finalapplicationid = htmlspecialchars( $applicationid, ENT_QUOTES, 'UTF-8' );
 $finalisworkex = htmlspecialchars( $isworkex, ENT_QUOTES, 'UTF-8' );
-$finalemployementtype = htmlspecialchars( $employementtype, ENT_QUOTES, 'UTF-8' );
 $finalorganizationname = htmlspecialchars( $organizationname, ENT_QUOTES, 'UTF-8' );
-$finalorganizationtype = htmlspecialchars( $organizationtype, ENT_QUOTES, 'UTF-8' );
-$finalorganizationtypeother = htmlspecialchars( $organizationtypeother, ENT_QUOTES, 'UTF-8' );
+$finallocation = htmlspecialchars( $location, ENT_QUOTES, 'UTF-8' );
+$finaldesignation = htmlspecialchars( $designation, ENT_QUOTES, 'UTF-8' );
 $finalworkstarted = htmlspecialchars( $workstarted, ENT_QUOTES, 'UTF-8' );
 $finalworkcompleted = htmlspecialchars( $workcompleted, ENT_QUOTES, 'UTF-8' );
-$finalcomapnyjoinedas = htmlspecialchars( $comapnyjoinedas, ENT_QUOTES, 'UTF-8' );
-$finalcurrentdesignation = htmlspecialchars( $currentdesignation, ENT_QUOTES, 'UTF-8' );
-$finalannualrenumeration = htmlspecialchars( $annualrenumeration, ENT_QUOTES, 'UTF-8' );
+$finalctc = htmlspecialchars( $ctc, ENT_QUOTES, 'UTF-8' );
 $finalrolesandresponsibility = htmlspecialchars( $rolesandresponsibility, ENT_QUOTES, 'UTF-8' );
 $finalextraworkexcount = htmlspecialchars( $extraworkexcount, ENT_QUOTES, 'UTF-8' );
 $finaltotalworkex = htmlspecialchars( $totalworkex, ENT_QUOTES, 'UTF-8' );
+$finalnoticeperiod = htmlspecialchars( $noticeperiod, ENT_QUOTES, 'UTF-8' );
 
 
 
@@ -86,20 +82,18 @@ if ( $mysql == true ) {
 	}
 
 	$sqlworkex = "INSERT INTO `users_work_experience_details`(`application_id`, `work_experience`, `name_of_organization`, `location`, `designation`, `started_work_date`, `completed_work_date`, `ctc`, `roles_and_responsibilty`, `extra_workex_count`, `total_work_experience`, `notice_period`) VALUES (
-				".mysql_real_escape_string_awesome( $finalapplicationid ).",
-				".mysql_real_escape_string_awesome( $finalisworkex ).",
-				".mysql_real_escape_string_awesome( $finalemployementtype ).",
-				".mysql_real_escape_string_awesome( $finalorganizationname ).",
-				".mysql_real_escape_string_awesome( $finalorganizationtype ).",
-				".mysql_real_escape_string_awesome( $finalorganizationtypeother ).",
-				".mysql_real_escape_string_awesome( $finalworkstarted ).",
-				".mysql_real_escape_string_awesome( $finalworkcompleted ).",
-				".mysql_real_escape_string_awesome( $finalcomapnyjoinedas ).",
-				".mysql_real_escape_string_awesome( $finalcurrentdesignation ).",
-				".mysql_real_escape_string_awesome( $finalannualrenumeration ).",
-				".mysql_real_escape_string_awesome( $finalrolesandresponsibility ).",
-				".mysql_real_escape_string_awesome( $finalextraworkexcount ).",
-				".mysql_real_escape_string_awesome( $finaltotalworkex )."
+				'".mysql_real_escape_string( $finalapplicationid )."',
+				'".mysql_real_escape_string( $finalisworkex )."',
+				'".mysql_real_escape_string( $finalorganizationname )."',
+				'".mysql_real_escape_string( $finallocation )."',
+				'".mysql_real_escape_string( $finaldesignation )."',
+				'".mysql_real_escape_string( $finalworkstarted )."',
+				'".mysql_real_escape_string( $finalworkcompleted )."',
+				'".mysql_real_escape_string( $finalctc )."',
+				'".mysql_real_escape_string( $finalrolesandresponsibility )."',
+				'".mysql_real_escape_string( $finalextraworkexcount )."',
+				'".mysql_real_escape_string( $finaltotalworkex )."',
+				'".mysql_real_escape_string( $finalnoticeperiod )."'
 			);";
 
 	$insertworkex = mysql_query( $sqlworkex );
@@ -110,63 +104,45 @@ if ( $mysql == true ) {
 
 	for ( $x=1; $x<=$finalextraworkexcount; $x++ ) {
 
-
-		$iemployementtype = "employementtype{$x}";
 		$iorganizationname = "organizationname{$x}";
-		$iorganizationtype = "organizationtype{$x}";
-		$iorganizationtypeother = "organizationtypeother{$x}";
-		$iindustrytype = "industrytype{$x}";
+		$ilocation = "location{$x}";
+		$idesignation = "designation{$x}";
 		$iworkstarted = "workstarted{$x}";
 		$iworkcompleted = "workcompleted{$x}";
-		$icomapnyjoinedas = "comapnyjoinedas{$x}";
-		$icurrentdesignation = "currentdesignation{$x}";
-		$iannualrenumeration = "annualrenumeration{$x}";
+		$ictc = "ctc{$x}";
 		$irolesandresponsibility = "rolesandresponsibility{$x}";
-		$iextraworkexcount = "extraworkexcount{$x}";
-		$itotalworkex = "totalworkex{$x}";
 
 
-		${'employementtype' . $x} = strip_tags( trim( $_POST[$iemployementtype] ) );
 		${'organizationname' . $x} = strip_tags( trim( $_POST[$iorganizationname] ) );
-		${'organizationtype' . $x} = strip_tags( trim( $_POST[$iorganizationtype] ) );
-		${'organizationtypeother' . $x} = strip_tags( trim( $_POST[$iorganizationtypeother] ) );
-		${'industrytype' . $x} = strip_tags( trim( $_POST[$iindustrytype] ) );
+		${'location' . $x} = strip_tags( trim( $_POST[$ilocation] ) );
+		${'designation' . $x} = strip_tags( trim( $_POST[$idesignation] ) );
 		${'workstarted' . $x} = strip_tags( trim( $_POST[$iworkstarted] ) );
 		${'workcompleted' . $x} = strip_tags( trim( $_POST[$iworkcompleted] ) );
-		${'comapnyjoinedas' . $x} = strip_tags( trim( $_POST[$icomapnyjoinedas] ) );
-		${'currentdesignation' . $x} = strip_tags( trim( $_POST[$icurrentdesignation] ) );
-		${'annualrenumeration' . $x} = strip_tags( trim( $_POST[$iannualrenumeration] ) );
+		${'ctc' . $x} = strip_tags( trim( $_POST[$ictc] ) );
 		${'rolesandresponsibility' . $x} = strip_tags( trim( $_POST[$irolesandresponsibility] ) );
-		${'extraworkexcount' . $x} = strip_tags( trim( $_POST[$iextraworkexcount] ) );
-		${'totalworkex' . $x} = strip_tags( trim( $_POST[$itotalworkex] ) );
 
-		${'finalemployementtype' . $x} = htmlspecialchars( ${'employementtype' . $x}, ENT_QUOTES, 'UTF-8' );
 		${'finalorganizationname' . $x} = htmlspecialchars( ${'organizationname' . $x}, ENT_QUOTES, 'UTF-8' );
-		${'finalorganizationtype' . $x} = htmlspecialchars( ${'organizationtype' . $x}, ENT_QUOTES, 'UTF-8' );
-		${'finalorganizationtypeother' . $x} = htmlspecialchars( ${'organizationtypeother' . $x}, ENT_QUOTES, 'UTF-8' );
-		${'finalindustrytype' . $x} = htmlspecialchars( ${'industrytype' . $x}, ENT_QUOTES, 'UTF-8' );
+		${'finallocation' . $x} = htmlspecialchars( ${'location' . $x}, ENT_QUOTES, 'UTF-8' );
+		${'finaldesignation' . $x} = htmlspecialchars( ${'designation' . $x}, ENT_QUOTES, 'UTF-8' );
 		${'finalworkstarted' . $x} = htmlspecialchars( ${'workstarted' . $x}, ENT_QUOTES, 'UTF-8' );
 		${'finalworkcompleted' . $x} = htmlspecialchars( ${'workcompleted' . $x}, ENT_QUOTES, 'UTF-8' );
-		${'finalcomapnyjoinedas' . $x} = htmlspecialchars( ${'comapnyjoinedas' . $x}, ENT_QUOTES, 'UTF-8' );
-		${'finalcurrentdesignation' . $x} = htmlspecialchars( ${'currentdesignation' . $x}, ENT_QUOTES, 'UTF-8' );
-		${'finalannualrenumeration' . $x} = htmlspecialchars( ${'annualrenumeration' . $x}, ENT_QUOTES, 'UTF-8' );
+		${'finalctc' . $x} = htmlspecialchars( ${'ctc' . $x}, ENT_QUOTES, 'UTF-8' );
 		${'finalrolesandresponsibility' . $x} = htmlspecialchars( ${'rolesandresponsibility' . $x}, ENT_QUOTES, 'UTF-8' );
-		${'finalextraworkexcount' . $x} = htmlspecialchars( ${'extraworkexcount' . $x}, ENT_QUOTES, 'UTF-8' );
-		${'finaltotalworkex' . $x} = htmlspecialchars( ${'totalworkex' . $x}, ENT_QUOTES, 'UTF-8' );
 
 
 		$sqlworkexextra = "INSERT INTO `users_work_experience_details`(`application_id`, `work_experience`, `name_of_organization`, `location`, `designation`, `started_work_date`, `completed_work_date`, `ctc`, `roles_and_responsibilty`, `extra_workex_count`, `total_work_experience`, `notice_period`) VALUES (
-				".mysql_real_escape_string_awesome( $finalapplicationid ).",
-				".mysql_real_escape_string_awesome( ${'finalemployementtype' . $x} ).",
-				".mysql_real_escape_string_awesome( ${'finalorganizationname' . $x} ).",
-				".mysql_real_escape_string_awesome( ${'finalorganizationtype' . $x} ).",
-				".mysql_real_escape_string_awesome( ${'finalorganizationtypeother' . $x} ).",
-				".mysql_real_escape_string_awesome( ${'finalworkstarted' . $x} ).",
-				".mysql_real_escape_string_awesome( ${'finalworkcompleted' . $x} ).",
-				".mysql_real_escape_string_awesome( ${'finalcomapnyjoinedas' . $x} ).",
-				".mysql_real_escape_string_awesome( ${'finalcurrentdesignation' . $x} ).",
-				".mysql_real_escape_string_awesome( ${'finalannualrenumeration' . $x} ).",
-				".mysql_real_escape_string_awesome( ${'finalrolesandresponsibility' . $x} )."
+				'".mysql_real_escape_string( $finalapplicationid )."',
+				'".mysql_real_escape_string( $finalisworkex )."',
+				'".mysql_real_escape_string( ${'finalorganizationname' . $x} )."',
+				'".mysql_real_escape_string( ${'finallocation' . $x} )."',
+				'".mysql_real_escape_string( ${'finaldesignation' . $x} )."',
+				'".mysql_real_escape_string( ${'finalworkstarted' . $x} )."',
+				'".mysql_real_escape_string( ${'finalworkcompleted' . $x} )."',
+				'".mysql_real_escape_string( ${'finalctc' . $x} )."',
+				'".mysql_real_escape_string( ${'finalrolesandresponsibility' . $x} )."',
+				'".mysql_real_escape_string( $finalextraworkexcount )."',
+				'".mysql_real_escape_string( $finaltotalworkex )."',
+				'".mysql_real_escape_string( $finalnoticeperiod )."'
 				);";
 
 

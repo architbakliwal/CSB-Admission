@@ -43,16 +43,19 @@ if ( strlen( trim( $_SESSION['userName'] ) ) == 0 ) {
 }
 
 $applicationid = strip_tags( trim( $_SESSION['userName'] ) );
-$aftermbaplan = strip_tags( trim( $_POST["aftermbaplan"] ) );
+$difficultdecision = strip_tags( trim( $_POST["difficult_decision"] ) );
+$futureplans = strip_tags( trim( $_POST["future_plans"] ) );
 
 $finalapplicationid = htmlspecialchars( $applicationid, ENT_QUOTES, 'UTF-8' );
-$finalaftermbaplan = htmlspecialchars( $aftermbaplan, ENT_QUOTES, 'UTF-8' );
+$finaldifficultdecision = htmlspecialchars( $difficultdecision, ENT_QUOTES, 'UTF-8' );
+$finalfutureplans = htmlspecialchars( $futureplans, ENT_QUOTES, 'UTF-8' );
 
 if ( $mysql == true ) {
-	$sqladditionalinfo = "INSERT INTO `csbedu_admission_2017`.`user_additional_info` (`application_id`, `after_mba_plan`) VALUES ('".mysql_real_escape_string( $finalapplicationid )."','".mysql_real_escape_string( $finalaftermbaplan )."')
+	$sqladditionalinfo = "INSERT INTO `csbedu_admission_2017`.`user_additional_info` (`application_id`, `difficult_decision`, `future_plans`) VALUES ('".mysql_real_escape_string( $finalapplicationid )."','".mysql_real_escape_string( $finaldifficultdecision )."','".mysql_real_escape_string( $finalfutureplans )."')
 		ON DUPLICATE KEY
 		UPDATE
-		after_mba_plan = VALUES(after_mba_plan)
+		difficult_decision = VALUES(difficult_decision),
+		future_plans = VALUES(future_plans)
 		;";
 
 	$insertaddtionalinfo = mysql_query( $sqladditionalinfo );

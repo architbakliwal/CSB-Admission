@@ -188,6 +188,8 @@
                     });
 
             }
+            // reformat the id attributes
+            redoIDs();
         });
 
         elem.on('clone_before_delete', function(event, $todelete) {
@@ -224,6 +226,19 @@
             $('input', document).tooltipster({
                 offsetY: 2,
                 position: 'top'
+            });
+
+            $(".workstarted, .workcompleted").on('focus', function(){
+                var $this = $(this);
+                $this.removeClass("hasDatepicker");
+                $this.datepicker( {
+                    changeMonth: true,
+                    changeYear: true,
+                    dateFormat: 'yy-mm-dd',
+                    yearRange: '1950:' + currentYear
+                });
+                $this.datepicker("show");
+                
             });
 
         });

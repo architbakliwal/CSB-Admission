@@ -67,7 +67,7 @@
 										<div class="column-four">
 											<div class="input-group-right irequire">
 											    <label for="workstarted" class="group label-input">
-				                                    <input type="text" id="workstarted" name="workstarted" class="input-right workstarted" placeholder="Started work in (YYYY-MM-DD">
+				                                    <input type="text" id="workstarted" name="workstarted" class="input-right workstarted" placeholder="Started work in (YYYY-MM-DD)">
 				                                </label>
 										    </div>
 										</div>

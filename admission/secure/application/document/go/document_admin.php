@@ -119,10 +119,6 @@ $tbl = <<<EOD
         <td>$gender</td>
     </tr>
     <tr nobr="true">
-        <td class="boldstyle">Blood Group:</td>
-        <td colspan="3">$blood_grp</td>
-    </tr>
-    <tr nobr="true">
         <td class="boldstyle">How did you hear of CSB?</td>
         <td>$hear_abt_csb</td>
         <td class="boldstyle">Please specify</td>
@@ -216,13 +212,249 @@ $tbl = <<<EOD
         <td>$parent_qualification</td>
     </tr>
 </table>
+<table border="1" cellpadding="5" cellspacing="0" align="center" width="100%" class="tablestyle">
+    <tr nobr="true">
+        <th colspan="4">Academic Qualifications</th>
+    </tr>
+</table>
 
+EOD;
+
+$pdf->writeHTML($tbl, false, false, false, false, '');
+
+$y = '';
+$x = 1;
+for($i=0; $i<=$extra_academic_added_count; $i++) {
+    $iqualification = "qualification{$y}";
+    $iinstitute = "institute{$y}";
+    $iboard = "board{$y}";
+    $iyearofpassing = "yearofpassing{$y}";
+    $iaggregate = "aggregate{$y}";
+    $iacademicachivements = "academicachivements{$y}";
+
+    $tbl = <<<EOD
+    <style>
+        body {
+            padding: 40px;
+        }
+        table {
+
+        }
+        table th {
+            background-color: #103F56;
+            text-align: left;
+            font-size: 15px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        table td {
+            text-align: left;
+        }
+        .specialrow {
+            background-color:#BFBFBF;
+            text-align:left;
+            font-size:11px;
+            font-weight:bold;
+        }
+        .tablestyle {
+
+        }
+        .boldstyle {
+            font-weight: bold;
+        }
+    </style>
+    <table border="1" cellpadding="5" cellspacing="0" align="center" width="100%" class="tablestyle">
+        <tr nobr="true">
+            <td class="boldstyle">Qualification:</td>
+            <td>$acads[$iqualification]</td>
+            <td class="boldstyle">Institute:</td>
+            <td>$acads[$iinstitute]</td>
+        </tr>
+        <tr nobr="true">
+            <td class="boldstyle">Board:</td>
+            <td>$acads[$iboard]</td>
+            <td class="boldstyle">Year of passing:</td>
+            <td>$acads[$iyearofpassing]</td>
+        </tr>
+        <tr nobr="true">
+            <td class="boldstyle">Aggregate Marks (% or GPA):</td>
+            <td colspan="3">$acads[$iaggregate]</td>
+        </tr>
+        <tr nobr="true">
+            <td class="boldstyle">Please enter you academic awards, extra-curricular achievements and positions of responsibility held, if any. (Max 200 words):</td>
+            <td colspan="3">$acads[$iacademicachivements]</td>
+        </tr>
+    </table>
+
+EOD;
+
+    $pdf->writeHTML($tbl, false, false, false, false, '');
+
+    $y = $x;
+    $x = $x + 1;
+}
+
+$tbl = <<<EOD
+<style>
+    body {
+        padding: 40px;
+    }
+    table {
+
+    }
+    table th {
+        background-color: #103F56;
+        text-align: left;
+        font-size: 15px;
+        font-weight: bold;
+        color: #ffffff;
+    }
+    table td {
+        text-align: left;
+    }
+    .specialrow {
+        background-color:#BFBFBF;
+        text-align:left;
+        font-size:11px;
+        font-weight:bold;
+    }
+    .tablestyle {
+
+    }
+    .boldstyle {
+        font-weight: bold;
+    }
+</style>
+<table border="1" cellpadding="5" cellspacing="0" align="center" width="100%" class="tablestyle">
+    <tr nobr="true">
+        <th colspan="4">Work Experience</th>
+    </tr>
+</table>
+EOD;
+
+
+$pdf->writeHTML($tbl, false, false, false, false, '');
+
+$y = '';
+$x = 1;
+for($i=0; $i<=$extra_workex_count; $i++) {
+    $iorganizationname = "organizationname{$y}";
+    $ilocation = "location{$y}";
+    $idesignation = "designation{$y}";
+    $iworkstarted = "workstarted{$y}";
+    $iworkcompleted = "workcompleted{$y}";
+    $ictc = "ctc{$y}";
+    $irolesandresponsibility = "rolesandresponsibility{$y}";
+
+    $tbl = <<<EOD
+    <style>
+        body {
+            padding: 40px;
+        }
+        table {
+
+        }
+        table th {
+            background-color: #103F56;
+            text-align: left;
+            font-size: 15px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        table td {
+            text-align: left;
+        }
+        .specialrow {
+            background-color:#BFBFBF;
+            text-align:left;
+            font-size:11px;
+            font-weight:bold;
+        }
+        .tablestyle {
+
+        }
+        .boldstyle {
+            font-weight: bold;
+        }
+    </style>
+    <table border="1" cellpadding="5" cellspacing="0" align="center" width="100%" class="tablestyle">
+        <tr nobr="true">
+            <td class="boldstyle">Name of the organisation:</td>
+            <td>$workex[$iorganizationname]</td>
+            <td class="boldstyle">Location (city):</td>
+            <td>$workex[$ilocation]</td>
+        </tr>
+        <tr nobr="true">
+            <td class="boldstyle">Designation:</td>
+            <td>$workex[$idesignation]</td>
+            <td class="boldstyle">Total CTC in INR:</td>
+            <td>$workex[$ictc]</td>
+        </tr>
+        <tr nobr="true">
+            <td class="boldstyle">Started work in (YYYY-MM-DD):</td>
+            <td>$workex[$iworkstarted]</td>
+            <td class="boldstyle">Completed work in (YYYY-MM-DD):</td>
+            <td>$workex[$iworkcompleted]</td>
+        </tr>
+        <tr nobr="true">
+            <td class="boldstyle">Please give a brief description of your role and achievements in the organisation. (Max 200 words):</td>
+            <td colspan="3">$workex[$irolesandresponsibility]</td>
+        </tr>
+    </table>
+EOD;
+
+    $pdf->writeHTML($tbl, false, false, false, false, '');
+
+    $y = $x;
+    $x = $x + 1;
+}
+
+
+$tbl = <<<EOD
+<style>
+    body {
+        padding: 40px;
+    }
+    table {
+
+    }
+    table th {
+        background-color: #103F56;
+        text-align: left;
+        font-size: 15px;
+        font-weight: bold;
+        color: #ffffff;
+    }
+    table td {
+        text-align: left;
+    }
+    .specialrow {
+        background-color:#BFBFBF;
+        text-align:left;
+        font-size:11px;
+        font-weight:bold;
+    }
+    .tablestyle {
+
+    }
+    .boldstyle {
+        font-weight: bold;
+    }
+</style>
+<table border="1" cellpadding="5" cellspacing="0" align="center" width="100%" class="tablestyle">
+    <tr nobr="true">
+        <td class="boldstyle">Total work experience in months:</td>
+        <td>$total_work_ex</td>
+        <td class="boldstyle">Current notice period in days:</td>
+        <td>$notice_period</td>
+    </tr>
+</table>
 <table border="1" cellpadding="5" cellspacing="0" align="center" width="100%" class="tablestyle">
     <tr nobr="true">
         <th colspan="4">Exam Score</th>
     </tr>
     <tr nobr="true">
-        <td colspan="4">$exam_score</td>
+        <td>$exam_score</td>
     </tr>
 </table>
 
@@ -259,8 +491,12 @@ $tbl = <<<EOD
         <th colspan="4">Additional Information</th>
     </tr>
     <tr nobr="true">
-        <td class="boldstyle">What do you plan to do after your MBA:</td>
-        <td colspan="3">$after_mba_plan</td>
+        <td class="boldstyle">Describe a difficult decision you have made and why it was challenging:</td>
+        <td colspan="3">$difficult_decision</td>
+    </tr>
+    <tr nobr="true">
+        <td class="boldstyle">Tell us about your path to business school and your future plans. How will an MBA help you along this journey:</td>
+        <td colspan="3">$future_plans</td>
     </tr>
 </table>
 

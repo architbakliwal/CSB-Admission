@@ -8,7 +8,6 @@ SELECT log.`login_system_login_attempts_first_date` AS 'applied_date',
        p.`user_dob`,
        p.`age`,
        p.`gender`,
-       p.`blood_group`,
        p.`hear_abt_csb`,
        p.`hear_abt_csb_others`,
        c.`email_id`,
@@ -37,6 +36,21 @@ SELECT log.`login_system_login_attempts_first_date` AS 'applied_date',
        c.`parent_organisation`,
        c.`parent_designation`,
        c.`parent_qualification`,
+       ac.`qualification`,
+       ac.`institute`,
+       ac.`board`,
+       ac.`year_of_passing`,
+       ac.`aggregate`,
+       ac.`academic_achivements`,
+       wx.`name_of_organization`,
+       wx.`location`,
+       wx.`designation`,
+       wx.`started_work_date`,
+       wx.`completed_work_date`,
+       wx.`ctc`,
+       wx.`roles_and_responsibilty`,
+       wx.`total_work_experience`,
+       wx.`notice_period`,
        ex.`exam_score`,
        r.`title_of_refree`,
        r.`name_of_refree`,
@@ -47,14 +61,17 @@ SELECT log.`login_system_login_attempts_first_date` AS 'applied_date',
        r.`capacity_of_knowing`,
        doc.`passport_photo`,
        doc.`resume`,
-       info.`after_mba_plan`,
+       info.`difficult_decision`,
+       info.`future_plans`,
        ad.`last_update_date`
-FROM `admission_users` a
-LEFT JOIN `login_system_login_attempts` log ON a.application_id = log.login_system_login_attempts_username
-LEFT JOIN `admission_section_status` ad ON a.application_id = ad.application_id
-LEFT JOIN `users_personal_details` p ON a.application_id = p.application_id
-LEFT JOIN `users_contact_details` c ON a.application_id = c.application_id
-LEFT JOIN `user_exam_score` ex ON a.application_id = ex.application_id
-LEFT JOIN `users_reference_details` r ON a.application_id = r.application_id
-LEFT JOIN `users_documents_uploads` doc ON a.application_id = doc.application_id
-LEFT JOIN `user_additional_info` info ON a.application_id = info.application_id
+FROM `login_system_login_attempts` log
+LEFT JOIN `admission_users` a ON log.login_system_login_attempts_username = a.application_id
+LEFT JOIN `admission_section_status` ad ON log.login_system_login_attempts_username = ad.application_id
+LEFT JOIN `users_personal_details` p ON log.login_system_login_attempts_username = p.application_id
+LEFT JOIN `users_contact_details` c ON log.login_system_login_attempts_username = c.application_id
+LEFT JOIN `users_academic_details` ac ON log.login_system_login_attempts_username = ac.application_id
+LEFT JOIN `users_work_experience_details` wx ON log.login_system_login_attempts_username = wx.application_id
+LEFT JOIN `user_exam_score` ex ON log.login_system_login_attempts_username = ex.application_id
+LEFT JOIN `users_reference_details` r ON log.login_system_login_attempts_username = r.application_id
+LEFT JOIN `users_documents_uploads` doc ON log.login_system_login_attempts_username = doc.application_id
+LEFT JOIN `user_additional_info` info ON log.login_system_login_attempts_username = info.application_id

@@ -166,6 +166,47 @@
 		$x = $x + 1;
     }
 
+    $workexsql = "SELECT * FROM  `users_work_experience_details` WHERE application_id ='" . $finalapplicationid ."' ORDER BY uid";
+
+	$selectworkex = mysql_query($workexsql);
+
+	if ( ! $selectworkex ) {
+	  die('Could not enter data: ' . mysql_error());
+	}
+
+	$y = '';
+	$x = 1;
+
+    while ($row = mysql_fetch_array($selectworkex, MYSQL_ASSOC)) {
+    	$iisworkex = "isworkex{$y}";
+		$iorganizationname = "organizationname{$y}";
+		$ilocation = "location{$y}";
+		$idesignation = "designation{$y}";
+		$iworkstarted = "workstarted{$y}";
+		$iworkcompleted = "workcompleted{$y}";
+		$ictc = "ctc{$y}";
+		$irolesandresponsibility = "rolesandresponsibility{$y}";
+		$iextraworkexcount = "extraworkexcount{$y}";
+		$itotalworkex = "totalworkex{$y}";
+		$inoticeperiod = "noticeperiod{$y}";
+
+		$workex[$iisworkex] = $row['work_experience'];
+		$workex[$iorganizationname] = $row['name_of_organization'];
+		$workex[$ilocation] = $row['location'];
+		$workex[$idesignation] = $row['designation'];
+		$workex[$iworkstarted] = $row['started_work_date'];
+		$workex[$iworkcompleted] = $row['completed_work_date'];
+		$workex[$ictc] = $row['ctc'];
+		$workex[$irolesandresponsibility] = $row['roles_and_responsibilty'];
+		$extra_workex_count = $row['extra_workex_count'];
+		$total_work_ex = $row['total_work_experience'];
+		$notice_period = $row['notice_period'];
+
+		$y = $x;
+
+		$x = $x + 1;
+    }
+
 
     $sqlexamscore = "SELECT * FROM  `user_exam_score` WHERE application_id ='" . $finalapplicationid ."'";
 
@@ -208,7 +249,8 @@
 	}
 
     while ($row = mysql_fetch_array($selectadditionalinfo, MYSQL_ASSOC)) {
-        $after_mba_plan = $row['after_mba_plan'];
+        $difficult_decision = $row['difficult_decision'];
+	    $future_plans = $row['future_plans'];
     }
 
 
